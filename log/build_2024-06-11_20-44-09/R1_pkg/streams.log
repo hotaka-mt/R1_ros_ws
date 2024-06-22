@@ -1,0 +1,21 @@
+[0.527s] Invoking command in '/home/hotaka/robocon2024/src/R1_pkg': PYTHONPATH=/home/hotaka/robocon2024/build/R1_pkg/prefix_override:/home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/R1_pkg build --build-base /home/hotaka/robocon2024/build/R1_pkg/build install --record /home/hotaka/robocon2024/build/R1_pkg/install.log --single-version-externally-managed install_data
+[0.711s] running egg_info
+[0.712s] writing ../../build/R1_pkg/R1_pkg.egg-info/PKG-INFO
+[0.712s] writing dependency_links to ../../build/R1_pkg/R1_pkg.egg-info/dependency_links.txt
+[0.713s] writing entry points to ../../build/R1_pkg/R1_pkg.egg-info/entry_points.txt
+[0.713s] writing requirements to ../../build/R1_pkg/R1_pkg.egg-info/requires.txt
+[0.713s] writing top-level names to ../../build/R1_pkg/R1_pkg.egg-info/top_level.txt
+[0.714s] reading manifest file '../../build/R1_pkg/R1_pkg.egg-info/SOURCES.txt'
+[0.715s] adding license file 'LICENSE'
+[0.715s] writing manifest file '../../build/R1_pkg/R1_pkg.egg-info/SOURCES.txt'
+[0.715s] running build
+[0.715s] running build_py
+[0.716s] running install
+[0.716s] running install_lib
+[0.717s] running install_data
+[0.717s] running install_egg_info
+[0.719s] removing '/home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[0.719s] Copying ../../build/R1_pkg/R1_pkg.egg-info to /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg-0.0.0-py3.10.egg-info
+[0.720s] running install_scripts
+[0.739s] writing list of installed files to '/home/hotaka/robocon2024/build/R1_pkg/install.log'
+[0.759s] Invoked command in '/home/hotaka/robocon2024/src/R1_pkg' returned '0': PYTHONPATH=/home/hotaka/robocon2024/build/R1_pkg/prefix_override:/home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/R1_pkg build --build-base /home/hotaka/robocon2024/build/R1_pkg/build install --record /home/hotaka/robocon2024/build/R1_pkg/install.log --single-version-externally-managed install_data

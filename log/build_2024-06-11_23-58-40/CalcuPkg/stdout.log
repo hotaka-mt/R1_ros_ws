@@ -1,0 +1,36 @@
+running egg_info
+creating ../../build/CalcuPkg/CalcuPkg.egg-info
+writing ../../build/CalcuPkg/CalcuPkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/CalcuPkg/CalcuPkg.egg-info/dependency_links.txt
+writing entry points to ../../build/CalcuPkg/CalcuPkg.egg-info/entry_points.txt
+writing requirements to ../../build/CalcuPkg/CalcuPkg.egg-info/requires.txt
+writing top-level names to ../../build/CalcuPkg/CalcuPkg.egg-info/top_level.txt
+writing manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+reading manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build
+creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib
+creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg
+copying CalcuPkg/calcu_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg
+copying CalcuPkg/__init__.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg
+running install
+running install_lib
+creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg
+copying /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg/calcu_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg
+copying /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg/__init__.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg
+byte-compiling /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg/calcu_node.py to calcu_node.cpython-310.pyc
+byte-compiling /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/ament_index
+creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/ament_index/resource_index
+creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/ament_index/resource_index/packages
+copying resource/CalcuPkg -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/CalcuPkg
+running install_egg_info
+Copying ../../build/CalcuPkg/CalcuPkg.egg-info to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing calcu_node script to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/CalcuPkg
+writing list of installed files to '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/install.log'

@@ -1,0 +1,40 @@
+[0.487s] Invoking command in '/home/hotaka/robocon2024/src/R1_pkg': PYTHONPATH=/home/hotaka/robocon2024/build/R1_pkg/prefix_override:/home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/R1_pkg build --build-base /home/hotaka/robocon2024/build/R1_pkg/build install --record /home/hotaka/robocon2024/build/R1_pkg/install.log --single-version-externally-managed install_data
+[0.654s] running egg_info
+[0.655s] creating ../../build/R1_pkg/R1_pkg.egg-info
+[0.655s] writing ../../build/R1_pkg/R1_pkg.egg-info/PKG-INFO
+[0.655s] writing dependency_links to ../../build/R1_pkg/R1_pkg.egg-info/dependency_links.txt
+[0.655s] writing entry points to ../../build/R1_pkg/R1_pkg.egg-info/entry_points.txt
+[0.655s] writing requirements to ../../build/R1_pkg/R1_pkg.egg-info/requires.txt
+[0.655s] writing top-level names to ../../build/R1_pkg/R1_pkg.egg-info/top_level.txt
+[0.655s] writing manifest file '../../build/R1_pkg/R1_pkg.egg-info/SOURCES.txt'
+[0.656s] reading manifest file '../../build/R1_pkg/R1_pkg.egg-info/SOURCES.txt'
+[0.656s] adding license file 'LICENSE'
+[0.657s] writing manifest file '../../build/R1_pkg/R1_pkg.egg-info/SOURCES.txt'
+[0.657s] running build
+[0.657s] running build_py
+[0.657s] creating /home/hotaka/robocon2024/build/R1_pkg/build
+[0.657s] creating /home/hotaka/robocon2024/build/R1_pkg/build/lib
+[0.657s] creating /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg
+[0.657s] copying R1_pkg/serial.py -> /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg
+[0.657s] copying R1_pkg/my_serial.py -> /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg
+[0.657s] copying R1_pkg/__init__.py -> /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg
+[0.657s] running install
+[0.658s] running install_lib
+[0.658s] creating /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg
+[0.658s] copying /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg/serial.py -> /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg
+[0.658s] copying /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg/my_serial.py -> /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg
+[0.658s] copying /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg/__init__.py -> /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg
+[0.658s] byte-compiling /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg/serial.py to serial.cpython-310.pyc
+[0.659s] byte-compiling /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg/my_serial.py to my_serial.cpython-310.pyc
+[0.659s] byte-compiling /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg/__init__.py to __init__.cpython-310.pyc
+[0.659s] running install_data
+[0.660s] creating /home/hotaka/robocon2024/install/R1_pkg/share/ament_index
+[0.660s] creating /home/hotaka/robocon2024/install/R1_pkg/share/ament_index/resource_index
+[0.660s] creating /home/hotaka/robocon2024/install/R1_pkg/share/ament_index/resource_index/packages
+[0.660s] copying resource/R1_pkg -> /home/hotaka/robocon2024/install/R1_pkg/share/ament_index/resource_index/packages
+[0.660s] copying package.xml -> /home/hotaka/robocon2024/install/R1_pkg/share/R1_pkg
+[0.660s] running install_egg_info
+[0.661s] Copying ../../build/R1_pkg/R1_pkg.egg-info to /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg-0.0.0-py3.10.egg-info
+[0.661s] running install_scripts
+[0.678s] writing list of installed files to '/home/hotaka/robocon2024/build/R1_pkg/install.log'
+[0.699s] Invoked command in '/home/hotaka/robocon2024/src/R1_pkg' returned '0': PYTHONPATH=/home/hotaka/robocon2024/build/R1_pkg/prefix_override:/home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/R1_pkg build --build-base /home/hotaka/robocon2024/build/R1_pkg/build install --record /home/hotaka/robocon2024/build/R1_pkg/install.log --single-version-externally-managed install_data

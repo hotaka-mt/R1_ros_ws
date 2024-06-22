@@ -1,0 +1,3 @@
+[console_scripts]
+debug_node = DebugPkg.debug_node:main
+

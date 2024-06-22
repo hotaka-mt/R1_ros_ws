@@ -1,0 +1,39 @@
+running egg_info
+creating ../../build/SerialPkg/SerialPkg.egg-info
+writing ../../build/SerialPkg/SerialPkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/SerialPkg/SerialPkg.egg-info/dependency_links.txt
+writing entry points to ../../build/SerialPkg/SerialPkg.egg-info/entry_points.txt
+writing requirements to ../../build/SerialPkg/SerialPkg.egg-info/requires.txt
+writing top-level names to ../../build/SerialPkg/SerialPkg.egg-info/top_level.txt
+writing manifest file '../../build/SerialPkg/SerialPkg.egg-info/SOURCES.txt'
+reading manifest file '../../build/SerialPkg/SerialPkg.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/SerialPkg/SerialPkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/hotaka/robocon2024/build/SerialPkg/build
+creating /home/hotaka/robocon2024/build/SerialPkg/build/lib
+creating /home/hotaka/robocon2024/build/SerialPkg/build/lib/SerialPkg
+copying SerialPkg/serial.py -> /home/hotaka/robocon2024/build/SerialPkg/build/lib/SerialPkg
+copying SerialPkg/my_serial.py -> /home/hotaka/robocon2024/build/SerialPkg/build/lib/SerialPkg
+copying SerialPkg/__init__.py -> /home/hotaka/robocon2024/build/SerialPkg/build/lib/SerialPkg
+running install
+running install_lib
+creating /home/hotaka/robocon2024/install/SerialPkg/lib/python3.10/site-packages/SerialPkg
+copying /home/hotaka/robocon2024/build/SerialPkg/build/lib/SerialPkg/serial.py -> /home/hotaka/robocon2024/install/SerialPkg/lib/python3.10/site-packages/SerialPkg
+copying /home/hotaka/robocon2024/build/SerialPkg/build/lib/SerialPkg/my_serial.py -> /home/hotaka/robocon2024/install/SerialPkg/lib/python3.10/site-packages/SerialPkg
+copying /home/hotaka/robocon2024/build/SerialPkg/build/lib/SerialPkg/__init__.py -> /home/hotaka/robocon2024/install/SerialPkg/lib/python3.10/site-packages/SerialPkg
+byte-compiling /home/hotaka/robocon2024/install/SerialPkg/lib/python3.10/site-packages/SerialPkg/serial.py to serial.cpython-310.pyc
+byte-compiling /home/hotaka/robocon2024/install/SerialPkg/lib/python3.10/site-packages/SerialPkg/my_serial.py to my_serial.cpython-310.pyc
+byte-compiling /home/hotaka/robocon2024/install/SerialPkg/lib/python3.10/site-packages/SerialPkg/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/hotaka/robocon2024/install/SerialPkg/share/ament_index
+creating /home/hotaka/robocon2024/install/SerialPkg/share/ament_index/resource_index
+creating /home/hotaka/robocon2024/install/SerialPkg/share/ament_index/resource_index/packages
+copying resource/SerialPkg -> /home/hotaka/robocon2024/install/SerialPkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/hotaka/robocon2024/install/SerialPkg/share/SerialPkg
+running install_egg_info
+Copying ../../build/SerialPkg/SerialPkg.egg-info to /home/hotaka/robocon2024/install/SerialPkg/lib/python3.10/site-packages/SerialPkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing serial_node script to /home/hotaka/robocon2024/install/SerialPkg/lib/SerialPkg
+writing list of installed files to '/home/hotaka/robocon2024/build/SerialPkg/install.log'

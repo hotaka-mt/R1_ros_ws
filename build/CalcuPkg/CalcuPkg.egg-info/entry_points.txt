@@ -1,0 +1,4 @@
+[console_scripts]
+calcu_node = CalcuPkg.calcu_node:main
+pos_node = CalcuPkg.pos_node:main
+

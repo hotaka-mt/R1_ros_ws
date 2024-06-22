@@ -1,0 +1,5 @@
+  File "/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg/calcu_node.py", line 10
+    self.serial_data = [0]*
+                           ^
+SyntaxError: invalid syntax
+

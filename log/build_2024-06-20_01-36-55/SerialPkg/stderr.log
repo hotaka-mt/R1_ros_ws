@@ -1,0 +1,5 @@
+  File "/home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages/SerialPkg/serial_node.py", line 29
+    self.tx_data[9:13] = serial.to_binary(56.0])
+                                              ^
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
+

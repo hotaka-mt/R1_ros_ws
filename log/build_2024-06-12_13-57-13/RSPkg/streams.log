@@ -1,0 +1,25 @@
+[0.444s] Invoking command in '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/src/RSPkg': PYTHONPATH=/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/prefix_override:/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/RSPkg build --build-base /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/build install --record /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/install.log --single-version-externally-managed install_data
+[0.604s] running egg_info
+[0.605s] writing ../../build/RSPkg/RSPkg.egg-info/PKG-INFO
+[0.605s] writing dependency_links to ../../build/RSPkg/RSPkg.egg-info/dependency_links.txt
+[0.605s] writing entry points to ../../build/RSPkg/RSPkg.egg-info/entry_points.txt
+[0.605s] writing requirements to ../../build/RSPkg/RSPkg.egg-info/requires.txt
+[0.605s] writing top-level names to ../../build/RSPkg/RSPkg.egg-info/top_level.txt
+[0.606s] reading manifest file '../../build/RSPkg/RSPkg.egg-info/SOURCES.txt'
+[0.606s] adding license file 'LICENSE'
+[0.607s] writing manifest file '../../build/RSPkg/RSPkg.egg-info/SOURCES.txt'
+[0.607s] running build
+[0.608s] running build_py
+[0.608s] copying RSPkg/RS_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/build/lib/RSPkg
+[0.608s] running install
+[0.608s] running install_lib
+[0.609s] copying /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/build/lib/RSPkg/RS_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg
+[0.609s] byte-compiling /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg/RS_node.py to RS_node.cpython-310.pyc
+[0.610s] running install_data
+[0.610s] running install_egg_info
+[0.611s] removing '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg-0.0.0-py3.10.egg-info' (and everything under it)
+[0.611s] Copying ../../build/RSPkg/RSPkg.egg-info to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg-0.0.0-py3.10.egg-info
+[0.612s] running install_scripts
+[0.628s] Installing RS_node script to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/RSPkg
+[0.628s] writing list of installed files to '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/install.log'
+[0.648s] Invoked command in '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/src/RSPkg' returned '0': PYTHONPATH=/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/prefix_override:/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/RSPkg build --build-base /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/build install --record /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/install.log --single-version-externally-managed install_data

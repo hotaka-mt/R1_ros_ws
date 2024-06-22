@@ -1,0 +1,38 @@
+[0.804s] Invoking command in '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/src/CalcuPkg': PYTHONPATH=/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/prefix_override:/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/CalcuPkg build --build-base /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build install --record /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/install.log --single-version-externally-managed install_data
+[0.995s] running egg_info
+[0.996s] creating ../../build/CalcuPkg/CalcuPkg.egg-info
+[0.996s] writing ../../build/CalcuPkg/CalcuPkg.egg-info/PKG-INFO
+[0.996s] writing dependency_links to ../../build/CalcuPkg/CalcuPkg.egg-info/dependency_links.txt
+[0.996s] writing entry points to ../../build/CalcuPkg/CalcuPkg.egg-info/entry_points.txt
+[0.997s] writing requirements to ../../build/CalcuPkg/CalcuPkg.egg-info/requires.txt
+[0.997s] writing top-level names to ../../build/CalcuPkg/CalcuPkg.egg-info/top_level.txt
+[0.997s] writing manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+[0.998s] reading manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+[0.998s] adding license file 'LICENSE'
+[0.999s] writing manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+[0.999s] running build
+[0.999s] running build_py
+[0.999s] creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build
+[0.999s] creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib
+[1.000s] creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg
+[1.000s] copying CalcuPkg/calcu_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg
+[1.000s] copying CalcuPkg/__init__.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg
+[1.000s] running install
+[1.000s] running install_lib
+[1.001s] creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg
+[1.001s] copying /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg/calcu_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg
+[1.001s] copying /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg/__init__.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg
+[1.001s] byte-compiling /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg/calcu_node.py to calcu_node.cpython-310.pyc
+[1.001s] byte-compiling /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg/__init__.py to __init__.cpython-310.pyc
+[1.002s] running install_data
+[1.002s] creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/ament_index
+[1.002s] creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/ament_index/resource_index
+[1.002s] creating /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/ament_index/resource_index/packages
+[1.002s] copying resource/CalcuPkg -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/ament_index/resource_index/packages
+[1.002s] copying package.xml -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/share/CalcuPkg
+[1.002s] running install_egg_info
+[1.003s] Copying ../../build/CalcuPkg/CalcuPkg.egg-info to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg-0.0.0-py3.10.egg-info
+[1.004s] running install_scripts
+[1.023s] Installing calcu_node script to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/CalcuPkg
+[1.023s] writing list of installed files to '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/install.log'
+[1.054s] Invoked command in '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/src/CalcuPkg' returned '0': PYTHONPATH=/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/prefix_override:/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/CalcuPkg build --build-base /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/build install --record /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/CalcuPkg/install.log --single-version-externally-managed install_data

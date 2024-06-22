@@ -1,0 +1,3 @@
+[console_scripts]
+RS_node = RSPkg.RS_node:main
+

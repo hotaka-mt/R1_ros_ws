@@ -1,0 +1,6 @@
+source;share/CalcuPkg/hook/pythonpath.ps1
+source;share/CalcuPkg/hook/pythonpath.dsv
+source;share/CalcuPkg/hook/pythonpath.sh
+source;share/CalcuPkg/hook/ament_prefix_path.ps1
+source;share/CalcuPkg/hook/ament_prefix_path.dsv
+source;share/CalcuPkg/hook/ament_prefix_path.sh

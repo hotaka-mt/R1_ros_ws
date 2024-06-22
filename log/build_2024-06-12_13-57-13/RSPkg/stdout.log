@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/RSPkg/RSPkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/RSPkg/RSPkg.egg-info/dependency_links.txt
+writing entry points to ../../build/RSPkg/RSPkg.egg-info/entry_points.txt
+writing requirements to ../../build/RSPkg/RSPkg.egg-info/requires.txt
+writing top-level names to ../../build/RSPkg/RSPkg.egg-info/top_level.txt
+reading manifest file '../../build/RSPkg/RSPkg.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/RSPkg/RSPkg.egg-info/SOURCES.txt'
+running build
+running build_py
+copying RSPkg/RS_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/build/lib/RSPkg
+running install
+running install_lib
+copying /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/build/lib/RSPkg/RS_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg
+byte-compiling /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg/RS_node.py to RS_node.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/RSPkg/RSPkg.egg-info to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing RS_node script to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/RSPkg/lib/RSPkg
+writing list of installed files to '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/RSPkg/install.log'

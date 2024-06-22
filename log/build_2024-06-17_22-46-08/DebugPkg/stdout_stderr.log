@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/DebugPkg/DebugPkg.egg-info
+writing ../../build/DebugPkg/DebugPkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/DebugPkg/DebugPkg.egg-info/dependency_links.txt
+writing entry points to ../../build/DebugPkg/DebugPkg.egg-info/entry_points.txt
+writing requirements to ../../build/DebugPkg/DebugPkg.egg-info/requires.txt
+writing top-level names to ../../build/DebugPkg/DebugPkg.egg-info/top_level.txt
+writing manifest file '../../build/DebugPkg/DebugPkg.egg-info/SOURCES.txt'
+reading manifest file '../../build/DebugPkg/DebugPkg.egg-info/SOURCES.txt'
+writing manifest file '../../build/DebugPkg/DebugPkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/hotaka/R1_ros_ws/build/DebugPkg/build
+creating /home/hotaka/R1_ros_ws/build/DebugPkg/build/lib
+creating /home/hotaka/R1_ros_ws/build/DebugPkg/build/lib/DebugPkg
+copying DebugPkg/__init__.py -> /home/hotaka/R1_ros_ws/build/DebugPkg/build/lib/DebugPkg
+copying DebugPkg/debug_node.py -> /home/hotaka/R1_ros_ws/build/DebugPkg/build/lib/DebugPkg
+running install
+running install_lib
+creating /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg
+copying /home/hotaka/R1_ros_ws/build/DebugPkg/build/lib/DebugPkg/__init__.py -> /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg
+copying /home/hotaka/R1_ros_ws/build/DebugPkg/build/lib/DebugPkg/debug_node.py -> /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg
+byte-compiling /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/debug_node.py to debug_node.cpython-310.pyc
+running install_data
+creating /home/hotaka/R1_ros_ws/install/DebugPkg/share/ament_index
+creating /home/hotaka/R1_ros_ws/install/DebugPkg/share/ament_index/resource_index
+creating /home/hotaka/R1_ros_ws/install/DebugPkg/share/ament_index/resource_index/packages
+copying resource/DebugPkg -> /home/hotaka/R1_ros_ws/install/DebugPkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/hotaka/R1_ros_ws/install/DebugPkg/share/DebugPkg
+running install_egg_info
+Copying ../../build/DebugPkg/DebugPkg.egg-info to /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing debug_node script to /home/hotaka/R1_ros_ws/install/DebugPkg/lib/DebugPkg
+writing list of installed files to '/home/hotaka/R1_ros_ws/build/DebugPkg/install.log'

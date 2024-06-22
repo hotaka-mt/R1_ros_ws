@@ -1,0 +1,26 @@
+[0.458s] Invoking command in '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/src/SerialPkg': PYTHONPATH=/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/SerialPkg/prefix_override:/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/SerialPkg build --build-base /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/SerialPkg/build install --record /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/SerialPkg/install.log --single-version-externally-managed install_data
+[0.628s] running egg_info
+[0.628s] writing ../../build/SerialPkg/SerialPkg.egg-info/PKG-INFO
+[0.629s] writing dependency_links to ../../build/SerialPkg/SerialPkg.egg-info/dependency_links.txt
+[0.629s] writing entry points to ../../build/SerialPkg/SerialPkg.egg-info/entry_points.txt
+[0.629s] writing requirements to ../../build/SerialPkg/SerialPkg.egg-info/requires.txt
+[0.629s] writing top-level names to ../../build/SerialPkg/SerialPkg.egg-info/top_level.txt
+[0.630s] reading manifest file '../../build/SerialPkg/SerialPkg.egg-info/SOURCES.txt'
+[0.630s] adding license file 'LICENSE'
+[0.631s] writing manifest file '../../build/SerialPkg/SerialPkg.egg-info/SOURCES.txt'
+[0.631s] running build
+[0.631s] running build_py
+[0.631s] copying SerialPkg/IM920_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/SerialPkg/build/lib/SerialPkg
+[0.631s] running install
+[0.632s] running install_lib
+[0.633s] copying /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/SerialPkg/build/lib/SerialPkg/IM920_node.py -> /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages/SerialPkg
+[0.633s] byte-compiling /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages/SerialPkg/IM920_node.py to IM920_node.cpython-310.pyc
+[0.634s] running install_data
+[0.634s] running install_egg_info
+[0.635s] removing '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages/SerialPkg-0.0.0-py3.10.egg-info' (and everything under it)
+[0.635s] Copying ../../build/SerialPkg/SerialPkg.egg-info to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages/SerialPkg-0.0.0-py3.10.egg-info
+[0.636s] running install_scripts
+[0.650s] Installing IM920_node script to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/SerialPkg/lib/SerialPkg
+[0.650s] Installing serial_node script to /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/SerialPkg/lib/SerialPkg
+[0.651s] writing list of installed files to '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/SerialPkg/install.log'
+[0.671s] Invoked command in '/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/src/SerialPkg' returned '0': PYTHONPATH=/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/SerialPkg/prefix_override:/home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/SerialPkg build --build-base /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/SerialPkg/build install --record /home/hotaka/2024_RoboconB_Repository/program/R1_ros_ws/build/SerialPkg/install.log --single-version-externally-managed install_data

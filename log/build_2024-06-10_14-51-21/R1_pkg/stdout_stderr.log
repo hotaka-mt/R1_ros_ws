@@ -1,0 +1,38 @@
+running egg_info
+creating ../../build/R1_pkg/R1_pkg.egg-info
+writing ../../build/R1_pkg/R1_pkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/R1_pkg/R1_pkg.egg-info/dependency_links.txt
+writing entry points to ../../build/R1_pkg/R1_pkg.egg-info/entry_points.txt
+writing requirements to ../../build/R1_pkg/R1_pkg.egg-info/requires.txt
+writing top-level names to ../../build/R1_pkg/R1_pkg.egg-info/top_level.txt
+writing manifest file '../../build/R1_pkg/R1_pkg.egg-info/SOURCES.txt'
+reading manifest file '../../build/R1_pkg/R1_pkg.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/R1_pkg/R1_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/hotaka/robocon2024/build/R1_pkg/build
+creating /home/hotaka/robocon2024/build/R1_pkg/build/lib
+creating /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg
+copying R1_pkg/serial.py -> /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg
+copying R1_pkg/my_serial.py -> /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg
+copying R1_pkg/__init__.py -> /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg
+running install
+running install_lib
+creating /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg
+copying /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg/serial.py -> /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg
+copying /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg/my_serial.py -> /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg
+copying /home/hotaka/robocon2024/build/R1_pkg/build/lib/R1_pkg/__init__.py -> /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg
+byte-compiling /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg/serial.py to serial.cpython-310.pyc
+byte-compiling /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg/my_serial.py to my_serial.cpython-310.pyc
+byte-compiling /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/hotaka/robocon2024/install/R1_pkg/share/ament_index
+creating /home/hotaka/robocon2024/install/R1_pkg/share/ament_index/resource_index
+creating /home/hotaka/robocon2024/install/R1_pkg/share/ament_index/resource_index/packages
+copying resource/R1_pkg -> /home/hotaka/robocon2024/install/R1_pkg/share/ament_index/resource_index/packages
+copying package.xml -> /home/hotaka/robocon2024/install/R1_pkg/share/R1_pkg
+running install_egg_info
+Copying ../../build/R1_pkg/R1_pkg.egg-info to /home/hotaka/robocon2024/install/R1_pkg/lib/python3.10/site-packages/R1_pkg-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/hotaka/robocon2024/build/R1_pkg/install.log'

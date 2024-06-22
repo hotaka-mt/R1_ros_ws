@@ -1,0 +1,4 @@
+[console_scripts]
+IM920_node = SerialPkg.IM920_node:main
+serial_node = SerialPkg.serial_node:main
+

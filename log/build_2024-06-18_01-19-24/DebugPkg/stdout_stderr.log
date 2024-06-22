@@ -1,0 +1,19 @@
+running egg_info
+writing ../../build/DebugPkg/DebugPkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/DebugPkg/DebugPkg.egg-info/dependency_links.txt
+writing entry points to ../../build/DebugPkg/DebugPkg.egg-info/entry_points.txt
+writing requirements to ../../build/DebugPkg/DebugPkg.egg-info/requires.txt
+writing top-level names to ../../build/DebugPkg/DebugPkg.egg-info/top_level.txt
+reading manifest file '../../build/DebugPkg/DebugPkg.egg-info/SOURCES.txt'
+writing manifest file '../../build/DebugPkg/DebugPkg.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/DebugPkg/DebugPkg.egg-info to /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing debug_node script to /home/hotaka/R1_ros_ws/install/DebugPkg/lib/DebugPkg
+writing list of installed files to '/home/hotaka/R1_ros_ws/build/DebugPkg/install.log'

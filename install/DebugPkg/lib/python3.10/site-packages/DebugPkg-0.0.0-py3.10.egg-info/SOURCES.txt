@@ -1,0 +1,17 @@
+package.xml
+setup.cfg
+setup.py
+../../build/DebugPkg/DebugPkg.egg-info/PKG-INFO
+../../build/DebugPkg/DebugPkg.egg-info/SOURCES.txt
+../../build/DebugPkg/DebugPkg.egg-info/dependency_links.txt
+../../build/DebugPkg/DebugPkg.egg-info/entry_points.txt
+../../build/DebugPkg/DebugPkg.egg-info/requires.txt
+../../build/DebugPkg/DebugPkg.egg-info/top_level.txt
+../../build/DebugPkg/DebugPkg.egg-info/zip-safe
+DebugPkg/__init__.py
+DebugPkg/debug_GUI.py
+DebugPkg/debug_node.py
+resource/DebugPkg
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
