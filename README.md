@@ -24,7 +24,7 @@ ROSからSTMに送る通信フォーマット
 STMからROSに送る通信フォーマット
 |バイト|内容|バイト|内容|バイト|内容|
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|1byte|0xA5|14byte|x加速度[m/s^2]|27byte|^|
+|1byte|0xAX|14byte|x加速度[m/s^2]|27byte|^|
 |2byte|x位置[mm]|15byte|^|28byte|y速度標準偏差|
 |3byte|^|16byte|y加速度[m/s^2]|29byte|^|
 |4byte|y位置[mm]|17byte|^|30byte|角速度標準偏差|
@@ -37,3 +37,5 @@ STMからROSに送る通信フォーマット
 |11byte|^|24byte|角度標準偏差|37byte|^|
 |12byte|角速度[deg/s]|25byte|^|38byte|機構状態|
 |13byte|^|26byte|x速度標準偏差|39byte|^|
+
+1byte目は直前にROSから送られてきた通信の1byte目を送信する
