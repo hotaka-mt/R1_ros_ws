@@ -1,0 +1,24 @@
+[1.256s] Invoking command in '/home/hotaka/R1_ros_ws/src/DebugPkg': PYTHONPATH=/home/hotaka/R1_ros_ws/build/DebugPkg/prefix_override:/home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/DebugPkg build --build-base /home/hotaka/R1_ros_ws/build/DebugPkg/build install --record /home/hotaka/R1_ros_ws/build/DebugPkg/install.log --single-version-externally-managed install_data
+[1.474s] running egg_info
+[1.475s] writing ../../build/DebugPkg/DebugPkg.egg-info/PKG-INFO
+[1.475s] writing dependency_links to ../../build/DebugPkg/DebugPkg.egg-info/dependency_links.txt
+[1.476s] writing entry points to ../../build/DebugPkg/DebugPkg.egg-info/entry_points.txt
+[1.476s] writing requirements to ../../build/DebugPkg/DebugPkg.egg-info/requires.txt
+[1.476s] writing top-level names to ../../build/DebugPkg/DebugPkg.egg-info/top_level.txt
+[1.478s] reading manifest file '../../build/DebugPkg/DebugPkg.egg-info/SOURCES.txt'
+[1.479s] writing manifest file '../../build/DebugPkg/DebugPkg.egg-info/SOURCES.txt'
+[1.479s] running build
+[1.479s] running build_py
+[1.479s] copying DebugPkg/debug_node.py -> /home/hotaka/R1_ros_ws/build/DebugPkg/build/lib/DebugPkg
+[1.479s] running install
+[1.480s] running install_lib
+[1.481s] copying /home/hotaka/R1_ros_ws/build/DebugPkg/build/lib/DebugPkg/debug_node.py -> /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg
+[1.482s] byte-compiling /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/debug_node.py to debug_node.cpython-310.pyc
+[1.485s] running install_data
+[1.485s] running install_egg_info
+[1.488s] removing '/home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg-0.0.0-py3.10.egg-info' (and everything under it)
+[1.488s] Copying ../../build/DebugPkg/DebugPkg.egg-info to /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg-0.0.0-py3.10.egg-info
+[1.489s] running install_scripts
+[1.509s] Installing debug_node script to /home/hotaka/R1_ros_ws/install/DebugPkg/lib/DebugPkg
+[1.510s] writing list of installed files to '/home/hotaka/R1_ros_ws/build/DebugPkg/install.log'
+[1.564s] Invoked command in '/home/hotaka/R1_ros_ws/src/DebugPkg' returned '0': PYTHONPATH=/home/hotaka/R1_ros_ws/build/DebugPkg/prefix_override:/home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/DebugPkg build --build-base /home/hotaka/R1_ros_ws/build/DebugPkg/build install --record /home/hotaka/R1_ros_ws/build/DebugPkg/install.log --single-version-externally-managed install_data

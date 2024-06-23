@@ -9,7 +9,6 @@ setup.py
 ../../build/DebugPkg/DebugPkg.egg-info/top_level.txt
 ../../build/DebugPkg/DebugPkg.egg-info/zip-safe
 DebugPkg/__init__.py
-DebugPkg/debug_GUI.py
 DebugPkg/debug_node.py
 resource/DebugPkg
 test/test_copyright.py
