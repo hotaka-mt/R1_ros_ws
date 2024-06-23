@@ -1,0 +1,21 @@
+{
+    "ros.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages",
+        "/home/hotaka/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages",
+        "/home/hotaka/R1_ros_ws/install/R1_pkg/lib/python3.10/site-packages",
+        "/home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages",
+        "/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages",
+        "/home/hotaka/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages",
+        "/home/hotaka/R1_ros_ws/install/R1_pkg/lib/python3.10/site-packages",
+        "/home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages",
+        "/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

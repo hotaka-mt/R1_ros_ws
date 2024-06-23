@@ -1,0 +1,5 @@
+  File "/home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/debug_GUI.py", line 44
+    self.forward_botton = tk.Button(text="前進"font=("メイリオ","20"),command=self.forward)
+                                         ^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+

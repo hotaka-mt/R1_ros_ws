@@ -1,14 +1,15 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
+from std_msgs.msg import Int32MultiArray
 from SerialPkg import my_serial as serial
 
 class SerialNode(Node):
     def __init__(self):
         super().__init__('serial_node')
         self.serial = serial.MySerial('/dev/ttyUSB0',115200)
-        self.tx_data = [100]*14   #ROS->STM    1~4バイト:ｘ速度　5~8バイト:y速度　9~12バイト:角速度　13バイト：機構出力　14バイド：チェック用
-        self.rx_data = [0]*14   #ROS<-STM    1~4バイト:ｘ位置　5~8バイト:y位置　9~12バイト:角度　　13バイト：機構状態　14バイド：チェック用
+        self.tx_data = [0]*15   #ROS->STM
+        self.rx_data = [0]*39   #ROS<-STM
         
         self.x_pos = 0
         self.y_pos = 0
@@ -47,13 +48,15 @@ class SerialNode(Node):
         '''
 
     def make_send(self,msg):
-        self.tx_data[0]  = msg[0]
-        self.tx_data[1:5]  = serial.to_binary(msg[1])
-        self.tx_data[5:9]  = serial.to_binary(msg[2])
-        self.tx_data[9:13] = serial.to_binary(msg[3])
-        for i in range(13):
-            self.tx_data[13] += self.tx_data[i]
-        self.tx_data[13] = self.tx_data[13]&0xFF
+        #for i in range(6):
+        #    print(f"{msg.data[i]}",end="    ")
+        #print()
+        self.tx_data[0]  = 0xA0
+        self.tx_data[1:5]  = serial.to_binary(msg.data[0])
+        self.tx_data[5:9]  = serial.to_binary(msg.data[1])
+        self.tx_data[9:13] = serial.to_binary(msg.data[2])
+        self.tx_data[13] = int(msg.data[3])
+        self.tx_data[14] = int(msg.data[4])
 
 def main(args = None):
     rclpy.init(args=args)
