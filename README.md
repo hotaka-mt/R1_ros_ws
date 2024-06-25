@@ -39,7 +39,7 @@ STMからROSに送る通信フォーマット
 |2byte|x位置[mm]|15byte|^|28byte|y速度標準偏差|
 |3byte|^|16byte|y加速度[m/s^2]|29byte|^|
 |4byte|y位置[mm]|17byte|^|30byte|角速度標準偏差|
-|5byte|^|18byte|角加速度[deg/s-2]|31byte|^|
+|5byte|^|18byte|角加速度[deg/s^2]|31byte|^|
 |6byte|角度[deg]|19byte|^|32byte|x加速度標準偏差|
 |7byte|^|20byte|x位置標準偏差|33byte|^|
 |8byte|x速度[m/s]|21byte|^|34byte|y加速度標準偏差|
