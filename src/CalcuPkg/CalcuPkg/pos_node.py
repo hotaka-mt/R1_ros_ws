@@ -1,6 +1,8 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
+from std_msgs.msg import UInt8MultiArray
+import numpy as np
 
 class PosNode(Node):
     def __init__(self):
@@ -19,25 +21,28 @@ class PosNode(Node):
         self.y_pos = 0
         self.deg = 0
 
+        self.otos = [0]*3
+
         self.msg = Float32MultiArray()
         for i in range(3):
             self.msg.data.append(0)
 
         self.rs_sub = self.create_subscription(Float32MultiArray,"RS_topic",self.get_realsense,10)
-        self.serial_sub = self.create_subscription(Float32MultiArray,"reception_topic",self.get_serial,10)
+        self.serial_sub = self.create_subscription(UInt8MultiArray,"reception_topic",self.get_serial,10)
 
         self.publisher = self.create_publisher(Float32MultiArray,"pos_topic",10)
 
     def get_realsense(self,msg):
         for i in range(3):
             self.rs_data[i] = msg.data[i]
-        #print(self.rs_data)
+        print(self.rs_data)
         self.calcu_position()
 
     def get_serial(self,msg):
-        for i in range(4):
-            self.serial_data[i] = msg.data[i]
-        #print(self.rs_data)
+        self.otos[0] = int(np.array(msg.data[1]<<8 | msg.data[0],dtype=np.int16)) * 0.0003
+        self.otos[1] = int(np.array(msg.data[3]<<8 | msg.data[2],dtype=np.int16)) * 0.0003
+        self.otos[2] = int(np.array(msg.data[5]<<8 | msg.data[4],dtype=np.int16)) * 0.0055
+        print(self.otos)
         self.calcu_position()
     
     def calcu_position(self):

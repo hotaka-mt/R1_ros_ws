@@ -24,8 +24,11 @@ class IM920(serial.Serial):
             super().write(self.tx_data)
         super().write(self.ENDCH)
     
-    def row_read(self,size):
-        return super().read(13+size*3-1)
+    def raw_read(self,size):
+        self.rx_data = super().read(13+size*3-1)
+        if self.rx_data[0]==0x30 and self.rx_data[1]==0x30 and self.rx_data[-2]==0xD and self.rx_data[-1]==0xA: 
+            return False
+        return self.rx_data
 
     def read(self,size,val):
         self.rx_data = super().read(13+size*3-1)
@@ -39,7 +42,7 @@ class IM920(serial.Serial):
         for i in range(size//4):
             self.return_data.append(self.from_binary(bytes(self.get_data[i*4:(i+1)*4]),val))
         return self.rx_NN,self.return_data
-
+        
     def to_binary(self,val):
         #int、float型をバイナリー変換
         if type(val) is int:

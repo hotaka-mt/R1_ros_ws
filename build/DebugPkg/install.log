@@ -1,7 +1,9 @@
 /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/__init__.py
 /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/debug_node.py
+/home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/debugGUI.py
 /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/__pycache__/__init__.cpython-310.pyc
 /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/__pycache__/debug_node.cpython-310.pyc
+/home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg/__pycache__/debugGUI.cpython-310.pyc
 /home/hotaka/R1_ros_ws/install/DebugPkg/share/ament_index/resource_index/packages/DebugPkg
 /home/hotaka/R1_ros_ws/install/DebugPkg/share/DebugPkg/package.xml
 /home/hotaka/R1_ros_ws/install/DebugPkg/lib/python3.10/site-packages/DebugPkg-0.0.0-py3.10.egg-info/zip-safe
