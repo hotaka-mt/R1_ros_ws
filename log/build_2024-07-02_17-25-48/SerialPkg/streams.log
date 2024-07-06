@@ -1,0 +1,22 @@
+[2.759s] Invoking command in '/home/hotaka/R1_ros_ws/src/SerialPkg': PYTHONPATH=/home/hotaka/R1_ros_ws/build/SerialPkg/prefix_override:/home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/SerialPkg build --build-base /home/hotaka/R1_ros_ws/build/SerialPkg/build install --record /home/hotaka/R1_ros_ws/build/SerialPkg/install.log --single-version-externally-managed install_data
+[3.365s] running egg_info
+[3.367s] writing ../../build/SerialPkg/SerialPkg.egg-info/PKG-INFO
+[3.367s] writing dependency_links to ../../build/SerialPkg/SerialPkg.egg-info/dependency_links.txt
+[3.367s] writing entry points to ../../build/SerialPkg/SerialPkg.egg-info/entry_points.txt
+[3.368s] writing requirements to ../../build/SerialPkg/SerialPkg.egg-info/requires.txt
+[3.368s] writing top-level names to ../../build/SerialPkg/SerialPkg.egg-info/top_level.txt
+[3.373s] reading manifest file '../../build/SerialPkg/SerialPkg.egg-info/SOURCES.txt'
+[3.374s] writing manifest file '../../build/SerialPkg/SerialPkg.egg-info/SOURCES.txt'
+[3.375s] running build
+[3.375s] running build_py
+[3.377s] running install
+[3.377s] running install_lib
+[3.380s] running install_data
+[3.381s] running install_egg_info
+[3.388s] removing '/home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages/SerialPkg-0.0.0-py3.10.egg-info' (and everything under it)
+[3.388s] Copying ../../build/SerialPkg/SerialPkg.egg-info to /home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages/SerialPkg-0.0.0-py3.10.egg-info
+[3.390s] running install_scripts
+[3.456s] Installing IM920_node script to /home/hotaka/R1_ros_ws/install/SerialPkg/lib/SerialPkg
+[3.457s] Installing serial_node script to /home/hotaka/R1_ros_ws/install/SerialPkg/lib/SerialPkg
+[3.459s] writing list of installed files to '/home/hotaka/R1_ros_ws/build/SerialPkg/install.log'
+[3.565s] Invoked command in '/home/hotaka/R1_ros_ws/src/SerialPkg' returned '0': PYTHONPATH=/home/hotaka/R1_ros_ws/build/SerialPkg/prefix_override:/home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/SerialPkg build --build-base /home/hotaka/R1_ros_ws/build/SerialPkg/build install --record /home/hotaka/R1_ros_ws/build/SerialPkg/install.log --single-version-externally-managed install_data

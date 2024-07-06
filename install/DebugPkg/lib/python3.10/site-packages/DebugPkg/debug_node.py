@@ -28,17 +28,19 @@ class DebugNode(Node):
 
         self.tiemr = self.create_timer(0.001,self.interrupt)
 
-        self.Param = [0]*64
+        self.Param = []
         self.before_Param = [0]*64
         self.send_mode = 0
         self.gain = []
 
     def interrupt(self):
-        self.Param = [0]*64
+        self.Param = []
         with open("src/DebugPkg/DebugPkg/robot_param.md") as param:
-            self.Param = param.read().split()
-            if len(self.Param) == 0: return False
+            para = param.read().split()
+            if len(para) != 64: return False
+            self.Param = para
 
+            print(len(self.Param))
             if self.Param[30:36] != self.before_Param[30:36]: 
                 self.mecanum_publish(float(self.Param[31]),float(self.Param[33]),float(self.Param[35]))
             
@@ -105,6 +107,8 @@ class DebugNode(Node):
     
     def update_robotparam(self):
         with open("src/DebugPkg/DebugPkg/robot_param.md","w") as param:
+            print(self.Param)
+            if len(self.Param) != 64: return False
             for i in range(18):
                 param.write(self.Param[i*2]+"   "+self.Param[i*2+1]+"\n")
             for i in range(3):

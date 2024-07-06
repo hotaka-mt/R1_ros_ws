@@ -1,5 +1,6 @@
 import tkinter as tk
 import threading
+import time
 
 class DebugGUI(tk.Tk):
     def __init__(self,window_name="DebugWindow",geometory="1024x600"):
@@ -40,6 +41,11 @@ class DebugGUI(tk.Tk):
             except: pass
         try: self.set_param_button.destroy()
         except: pass
+        for i in range(9):
+            try: self.pos_name_label[i].destroy()
+            except:pass
+            try: self.pos_label[i].destroy()
+            except:pass
 
     def GUI_reset(self,event):
         self.main_destroy()
@@ -66,7 +72,9 @@ class DebugGUI(tk.Tk):
             for i in range(18,32):
                 param.write(self.Param[i*2]+"   "+self.Param[i*2+1]+"\n")   
         with open("src/DebugPkg/DebugPkg/robot_param.md") as param:
-            self.Param = param.read().split()
+            para = param.read().split()
+            if len(para) != 64: return False
+            self.Param = para
     
     def update_velo(self,event):
         self.x_vel = self.RL_scale_var.get()
@@ -87,7 +95,9 @@ class DebugGUI(tk.Tk):
 
     def main_menu(self):
         with open("src/DebugPkg/DebugPkg/robot_param.md") as param:
-            self.Param = param.read().split()
+            para = param.read().split()
+            if len(para) != 64: return False
+            self.Param = para
         self.main_destroy()
         #手動操作
         self.manual_botton = tk.Button(text="手動操作",font=("メイリオ","20"),command=self.manual_control)
@@ -102,7 +112,9 @@ class DebugGUI(tk.Tk):
         self.param_label = [0]*15
         self.param_button = [0]*5
         with open("src/DebugPkg/DebugPkg/robot_param.md") as param:
-            self.Param = param.read().split()
+            para = param.read().split()
+            if len(para) != 64: return False
+            self.Param = para
             for i in range(15):
                 self.param_entry[i] = tk.Entry(font=("メイリオ","20"),width=5)
                 self.param_label[i] = tk.Label(text=self.Param[i*2]+"    "+self.Param[i*2+1],font=("メイリオ","20"))
@@ -131,13 +143,26 @@ class DebugGUI(tk.Tk):
         self.main_destroy()
         self.pos_name_label = [0]*9
         self.pos_label = [0]*9
+        self.pos_thread = threading.Thread(target=self.pos_update)
         with open("src/DebugPkg/DebugPkg/robot_param.md") as param:
-            self.Param = param.read().split()
+            para = param.read().split()
+            if len(para) != 64: return False
+            self.Param = para
             for i in range(9):
                 self.pos_name_label[i] = tk.Label(text=self.Param[36+i*2],font=("メイリオ","20"))
                 self.pos_label[i] = tk.Label(text=self.Param[36+i*2+1],font=("メイリオ","20"))
                 self.pos_name_label[i].place(x=20,y=80+i*50)
-                self.pos_label[i].place(x=100,y=80+i*50)
+                self.pos_label[i].place(x=200,y=80+i*50)
+        self.pos_thread.start()
+
+    def pos_update(self):
+        while True:
+            with open("src/DebugPkg/DebugPkg/robot_param.md") as param:
+                self.Param = param.read().split()
+                #print("hello")
+                if len(self.Param) != 0:
+                    for i in range(9):
+                        self.pos_label[i]["text"] = self.Param[36+i*2+1]
 
 if __name__ == "__main__":
     gui = DebugGUI()

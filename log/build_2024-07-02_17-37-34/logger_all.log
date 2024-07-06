@@ -1,0 +1,227 @@
+[0.193s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.193s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x773dccd1f2b0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x773dcce0f8b0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x773dcce0f8b0>>, mixin_verb=('build',))
+[0.532s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.532s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.532s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.532s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.532s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.532s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.532s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/hotaka/R1_ros_ws'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.556s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.556s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.556s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.556s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.556s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.557s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.558s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.559s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.559s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.559s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.559s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.559s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.559s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.559s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.560s] Level 1:colcon.colcon_core.package_identification:_identify(src/CalcuPkg) by extensions ['ignore', 'ignore_ament_install']
+[0.561s] Level 1:colcon.colcon_core.package_identification:_identify(src/CalcuPkg) by extension 'ignore'
+[0.561s] Level 1:colcon.colcon_core.package_identification:_identify(src/CalcuPkg) by extension 'ignore_ament_install'
+[0.561s] Level 1:colcon.colcon_core.package_identification:_identify(src/CalcuPkg) by extensions ['colcon_pkg']
+[0.561s] Level 1:colcon.colcon_core.package_identification:_identify(src/CalcuPkg) by extension 'colcon_pkg'
+[0.561s] Level 1:colcon.colcon_core.package_identification:_identify(src/CalcuPkg) by extensions ['colcon_meta']
+[0.561s] Level 1:colcon.colcon_core.package_identification:_identify(src/CalcuPkg) by extension 'colcon_meta'
+[0.561s] Level 1:colcon.colcon_core.package_identification:_identify(src/CalcuPkg) by extensions ['ros']
+[0.561s] Level 1:colcon.colcon_core.package_identification:_identify(src/CalcuPkg) by extension 'ros'
+[0.566s] DEBUG:colcon.colcon_core.package_identification:Package 'src/CalcuPkg' with type 'ros.ament_python' and name 'CalcuPkg'
+[0.566s] Level 1:colcon.colcon_core.package_identification:_identify(src/RSPkg) by extensions ['ignore', 'ignore_ament_install']
+[0.566s] Level 1:colcon.colcon_core.package_identification:_identify(src/RSPkg) by extension 'ignore'
+[0.566s] Level 1:colcon.colcon_core.package_identification:_identify(src/RSPkg) by extension 'ignore_ament_install'
+[0.566s] Level 1:colcon.colcon_core.package_identification:_identify(src/RSPkg) by extensions ['colcon_pkg']
+[0.566s] Level 1:colcon.colcon_core.package_identification:_identify(src/RSPkg) by extension 'colcon_pkg'
+[0.566s] Level 1:colcon.colcon_core.package_identification:_identify(src/RSPkg) by extensions ['colcon_meta']
+[0.566s] Level 1:colcon.colcon_core.package_identification:_identify(src/RSPkg) by extension 'colcon_meta'
+[0.567s] Level 1:colcon.colcon_core.package_identification:_identify(src/RSPkg) by extensions ['ros']
+[0.567s] Level 1:colcon.colcon_core.package_identification:_identify(src/RSPkg) by extension 'ros'
+[0.568s] DEBUG:colcon.colcon_core.package_identification:Package 'src/RSPkg' with type 'ros.ament_python' and name 'RSPkg'
+[0.568s] Level 1:colcon.colcon_core.package_identification:_identify(src/SerialPkg) by extensions ['ignore', 'ignore_ament_install']
+[0.568s] Level 1:colcon.colcon_core.package_identification:_identify(src/SerialPkg) by extension 'ignore'
+[0.568s] Level 1:colcon.colcon_core.package_identification:_identify(src/SerialPkg) by extension 'ignore_ament_install'
+[0.568s] Level 1:colcon.colcon_core.package_identification:_identify(src/SerialPkg) by extensions ['colcon_pkg']
+[0.568s] Level 1:colcon.colcon_core.package_identification:_identify(src/SerialPkg) by extension 'colcon_pkg'
+[0.568s] Level 1:colcon.colcon_core.package_identification:_identify(src/SerialPkg) by extensions ['colcon_meta']
+[0.568s] Level 1:colcon.colcon_core.package_identification:_identify(src/SerialPkg) by extension 'colcon_meta'
+[0.569s] Level 1:colcon.colcon_core.package_identification:_identify(src/SerialPkg) by extensions ['ros']
+[0.569s] Level 1:colcon.colcon_core.package_identification:_identify(src/SerialPkg) by extension 'ros'
+[0.570s] DEBUG:colcon.colcon_core.package_identification:Package 'src/SerialPkg' with type 'ros.ament_python' and name 'SerialPkg'
+[0.570s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.570s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.570s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.570s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.570s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.633s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.634s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.637s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 5 installed packages in /home/hotaka/R1_ros_ws/install
+[0.640s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 351 installed packages in /opt/ros/humble
+[0.644s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.735s] Level 5:colcon.colcon_core.verb:set package 'CalcuPkg' build argument 'cmake_args' from command line to 'None'
+[0.736s] Level 5:colcon.colcon_core.verb:set package 'CalcuPkg' build argument 'cmake_target' from command line to 'None'
+[0.736s] Level 5:colcon.colcon_core.verb:set package 'CalcuPkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.736s] Level 5:colcon.colcon_core.verb:set package 'CalcuPkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.736s] Level 5:colcon.colcon_core.verb:set package 'CalcuPkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.736s] Level 5:colcon.colcon_core.verb:set package 'CalcuPkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.736s] Level 5:colcon.colcon_core.verb:set package 'CalcuPkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.736s] Level 5:colcon.colcon_core.verb:set package 'CalcuPkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.736s] Level 5:colcon.colcon_core.verb:set package 'CalcuPkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.736s] DEBUG:colcon.colcon_core.verb:Building package 'CalcuPkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hotaka/R1_ros_ws/build/CalcuPkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hotaka/R1_ros_ws/install/CalcuPkg', 'merge_install': False, 'path': '/home/hotaka/R1_ros_ws/src/CalcuPkg', 'symlink_install': False, 'test_result_base': None}
+[0.737s] Level 5:colcon.colcon_core.verb:set package 'RSPkg' build argument 'cmake_args' from command line to 'None'
+[0.737s] Level 5:colcon.colcon_core.verb:set package 'RSPkg' build argument 'cmake_target' from command line to 'None'
+[0.737s] Level 5:colcon.colcon_core.verb:set package 'RSPkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.737s] Level 5:colcon.colcon_core.verb:set package 'RSPkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.737s] Level 5:colcon.colcon_core.verb:set package 'RSPkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.737s] Level 5:colcon.colcon_core.verb:set package 'RSPkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.737s] Level 5:colcon.colcon_core.verb:set package 'RSPkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.737s] Level 5:colcon.colcon_core.verb:set package 'RSPkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.737s] Level 5:colcon.colcon_core.verb:set package 'RSPkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.737s] DEBUG:colcon.colcon_core.verb:Building package 'RSPkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hotaka/R1_ros_ws/build/RSPkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hotaka/R1_ros_ws/install/RSPkg', 'merge_install': False, 'path': '/home/hotaka/R1_ros_ws/src/RSPkg', 'symlink_install': False, 'test_result_base': None}
+[0.738s] Level 5:colcon.colcon_core.verb:set package 'SerialPkg' build argument 'cmake_args' from command line to 'None'
+[0.738s] Level 5:colcon.colcon_core.verb:set package 'SerialPkg' build argument 'cmake_target' from command line to 'None'
+[0.738s] Level 5:colcon.colcon_core.verb:set package 'SerialPkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.738s] Level 5:colcon.colcon_core.verb:set package 'SerialPkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.738s] Level 5:colcon.colcon_core.verb:set package 'SerialPkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.738s] Level 5:colcon.colcon_core.verb:set package 'SerialPkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.738s] Level 5:colcon.colcon_core.verb:set package 'SerialPkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.738s] Level 5:colcon.colcon_core.verb:set package 'SerialPkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.738s] Level 5:colcon.colcon_core.verb:set package 'SerialPkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.739s] DEBUG:colcon.colcon_core.verb:Building package 'SerialPkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hotaka/R1_ros_ws/build/SerialPkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hotaka/R1_ros_ws/install/SerialPkg', 'merge_install': False, 'path': '/home/hotaka/R1_ros_ws/src/SerialPkg', 'symlink_install': False, 'test_result_base': None}
+[0.739s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.741s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.741s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/hotaka/R1_ros_ws/src/CalcuPkg' with build type 'ament_python'
+[0.742s] Level 1:colcon.colcon_core.shell:create_environment_hook('CalcuPkg', 'ament_prefix_path')
+[0.746s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.746s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/hook/ament_prefix_path.ps1'
+[0.747s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/hook/ament_prefix_path.dsv'
+[0.748s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/hook/ament_prefix_path.sh'
+[0.749s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.749s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.757s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/hotaka/R1_ros_ws/src/RSPkg' with build type 'ament_python'
+[0.758s] Level 1:colcon.colcon_core.shell:create_environment_hook('RSPkg', 'ament_prefix_path')
+[0.758s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/hook/ament_prefix_path.ps1'
+[0.759s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/hook/ament_prefix_path.dsv'
+[0.760s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/hook/ament_prefix_path.sh'
+[0.761s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.761s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.768s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/hotaka/R1_ros_ws/src/SerialPkg' with build type 'ament_python'
+[0.768s] Level 1:colcon.colcon_core.shell:create_environment_hook('SerialPkg', 'ament_prefix_path')
+[0.768s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/hook/ament_prefix_path.ps1'
+[0.769s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/hook/ament_prefix_path.dsv'
+[0.770s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/hook/ament_prefix_path.sh'
+[0.771s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.771s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.307s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/hotaka/R1_ros_ws/src/CalcuPkg'
+[1.307s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.308s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.816s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/hotaka/R1_ros_ws/src/RSPkg'
+[1.816s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.817s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.318s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/hotaka/R1_ros_ws/src/SerialPkg'
+[2.319s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.319s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.052s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hotaka/R1_ros_ws/src/RSPkg': PYTHONPATH=/home/hotaka/R1_ros_ws/build/RSPkg/prefix_override:/home/hotaka/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/RSPkg build --build-base /home/hotaka/R1_ros_ws/build/RSPkg/build install --record /home/hotaka/R1_ros_ws/build/RSPkg/install.log --single-version-externally-managed install_data
+[3.056s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hotaka/R1_ros_ws/src/CalcuPkg': PYTHONPATH=/home/hotaka/R1_ros_ws/build/CalcuPkg/prefix_override:/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/CalcuPkg build --build-base /home/hotaka/R1_ros_ws/build/CalcuPkg/build install --record /home/hotaka/R1_ros_ws/build/CalcuPkg/install.log --single-version-externally-managed install_data
+[3.141s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hotaka/R1_ros_ws/src/SerialPkg': PYTHONPATH=/home/hotaka/R1_ros_ws/build/SerialPkg/prefix_override:/home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/SerialPkg build --build-base /home/hotaka/R1_ros_ws/build/SerialPkg/build install --record /home/hotaka/R1_ros_ws/build/SerialPkg/install.log --single-version-externally-managed install_data
+[3.729s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hotaka/R1_ros_ws/src/RSPkg' returned '0': PYTHONPATH=/home/hotaka/R1_ros_ws/build/RSPkg/prefix_override:/home/hotaka/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/RSPkg build --build-base /home/hotaka/R1_ros_ws/build/RSPkg/build install --record /home/hotaka/R1_ros_ws/build/RSPkg/install.log --single-version-externally-managed install_data
+[3.736s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/RSPkg' for CMake module files
+[3.738s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/RSPkg' for CMake config files
+[3.741s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/RSPkg/lib'
+[3.741s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/RSPkg/bin'
+[3.742s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/RSPkg/lib/pkgconfig/RSPkg.pc'
+[3.743s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages'
+[3.743s] Level 1:colcon.colcon_core.shell:create_environment_hook('RSPkg', 'pythonpath')
+[3.744s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/hook/pythonpath.ps1'
+[3.746s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/hook/pythonpath.dsv'
+[3.748s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/hook/pythonpath.sh'
+[3.750s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/RSPkg/bin'
+[3.750s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(RSPkg)
+[3.751s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/package.ps1'
+[3.754s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/package.dsv'
+[3.756s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/package.sh'
+[3.759s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/package.bash'
+[3.762s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/RSPkg/share/RSPkg/package.zsh'
+[3.764s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hotaka/R1_ros_ws/install/RSPkg/share/colcon-core/packages/RSPkg)
+[3.767s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/CalcuPkg' for CMake module files
+[3.768s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/CalcuPkg' for CMake config files
+[3.770s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hotaka/R1_ros_ws/src/CalcuPkg' returned '0': PYTHONPATH=/home/hotaka/R1_ros_ws/build/CalcuPkg/prefix_override:/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/CalcuPkg build --build-base /home/hotaka/R1_ros_ws/build/CalcuPkg/build install --record /home/hotaka/R1_ros_ws/build/CalcuPkg/install.log --single-version-externally-managed install_data
+[3.771s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/CalcuPkg/lib'
+[3.772s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/CalcuPkg/bin'
+[3.772s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/pkgconfig/CalcuPkg.pc'
+[3.773s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages'
+[3.773s] Level 1:colcon.colcon_core.shell:create_environment_hook('CalcuPkg', 'pythonpath')
+[3.773s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/hook/pythonpath.ps1'
+[3.775s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/hook/pythonpath.dsv'
+[3.775s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/hook/pythonpath.sh'
+[3.777s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/CalcuPkg/bin'
+[3.777s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(CalcuPkg)
+[3.778s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/package.ps1'
+[3.779s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/package.dsv'
+[3.781s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/package.sh'
+[3.782s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/package.bash'
+[3.782s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/CalcuPkg/share/CalcuPkg/package.zsh'
+[3.783s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hotaka/R1_ros_ws/install/CalcuPkg/share/colcon-core/packages/CalcuPkg)
+[3.850s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/SerialPkg' for CMake module files
+[3.851s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hotaka/R1_ros_ws/src/SerialPkg' returned '0': PYTHONPATH=/home/hotaka/R1_ros_ws/build/SerialPkg/prefix_override:/home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/SerialPkg build --build-base /home/hotaka/R1_ros_ws/build/SerialPkg/build install --record /home/hotaka/R1_ros_ws/build/SerialPkg/install.log --single-version-externally-managed install_data
+[3.852s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/SerialPkg' for CMake config files
+[3.853s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/SerialPkg/lib'
+[3.853s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/SerialPkg/bin'
+[3.853s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/SerialPkg/lib/pkgconfig/SerialPkg.pc'
+[3.854s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/SerialPkg/lib/python3.10/site-packages'
+[3.854s] Level 1:colcon.colcon_core.shell:create_environment_hook('SerialPkg', 'pythonpath')
+[3.854s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/hook/pythonpath.ps1'
+[3.855s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/hook/pythonpath.dsv'
+[3.856s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/hook/pythonpath.sh'
+[3.857s] Level 1:colcon.colcon_core.environment:checking '/home/hotaka/R1_ros_ws/install/SerialPkg/bin'
+[3.858s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(SerialPkg)
+[3.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/package.ps1'
+[3.859s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/package.dsv'
+[3.860s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/package.sh'
+[3.861s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/package.bash'
+[3.862s] INFO:colcon.colcon_core.shell:Creating package script '/home/hotaka/R1_ros_ws/install/SerialPkg/share/SerialPkg/package.zsh'
+[3.862s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hotaka/R1_ros_ws/install/SerialPkg/share/colcon-core/packages/SerialPkg)
+[3.863s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.864s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.864s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.864s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.875s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.876s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.876s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.896s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.897s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hotaka/R1_ros_ws/install/local_setup.ps1'
+[3.899s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hotaka/R1_ros_ws/install/_local_setup_util_ps1.py'
+[3.902s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hotaka/R1_ros_ws/install/setup.ps1'
+[3.904s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hotaka/R1_ros_ws/install/local_setup.sh'
+[3.905s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hotaka/R1_ros_ws/install/_local_setup_util_sh.py'
+[3.906s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hotaka/R1_ros_ws/install/setup.sh'
+[3.908s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hotaka/R1_ros_ws/install/local_setup.bash'
+[3.909s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hotaka/R1_ros_ws/install/setup.bash'
+[3.913s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hotaka/R1_ros_ws/install/local_setup.zsh'
+[3.913s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hotaka/R1_ros_ws/install/setup.zsh'

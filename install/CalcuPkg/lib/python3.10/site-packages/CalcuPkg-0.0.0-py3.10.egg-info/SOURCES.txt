@@ -10,6 +10,7 @@ setup.py
 ../../build/CalcuPkg/CalcuPkg.egg-info/zip-safe
 CalcuPkg/__init__.py
 CalcuPkg/calcu_node.py
+CalcuPkg/debug_node.py
 CalcuPkg/pos_node.py
 resource/CalcuPkg
 test/test_copyright.py

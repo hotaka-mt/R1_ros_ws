@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'pos_node = CalcuPkg.pos_node:main',
-            'calcu_node = CalcuPkg.calcu_node:main'
+            'calcu_node = CalcuPkg.calcu_node:main',
+            'debug_node = CalcuPkg.debug_node:main'
         ],
     },
 )

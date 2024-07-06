@@ -31,7 +31,7 @@ class RSNode(Node):
             self.yaw = m.atan2(2.0 * (self.w*self.z + self.x*self.y), self.w*self.w + self.x*self.x - self.y*self.y - self.z*self.z) * 180.0 / m.pi
             self.msg.data[0] = -1*self.rs_data.translation.x
             self.msg.data[1] = self.rs_data.translation.z
-            self.msg.data[2] = self.yaw
+            self.msg.data[2] = -1*self.yaw
             self.publisher.publish(self.msg)
             for i in range(3):
                 print("{:.3f}".format(self.msg.data[i]),end=" ")

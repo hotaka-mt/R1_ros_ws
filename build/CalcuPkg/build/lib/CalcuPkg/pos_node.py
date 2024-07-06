@@ -12,9 +12,9 @@ class PosNode(Node):
         self.serial_data = [0]*4
 
         ### センサへの依存度を調整する。値が大きいほどRealSensenに、小さいほどトラッキングセンサに依存する
-        self.alpha_x = 0.5
-        self.alpha_y = 0.5
-        self.alpha_deg = 0.5 
+        self.alpha_x = 0
+        self.alpha_y = 0
+        self.alpha_deg = 1.0 
         ###
 
         self.x_pos = 0
@@ -35,7 +35,7 @@ class PosNode(Node):
     def get_realsense(self,msg):
         for i in range(3):
             self.rs_data[i] = msg.data[i]
-        print(self.rs_data)
+        #print(self.rs_data)
         self.calcu_position()
 
     def get_serial(self,msg):
@@ -46,11 +46,11 @@ class PosNode(Node):
         self.calcu_position()
     
     def calcu_position(self):
-        self.x_pos = self.alpha_x*self.rs_data[0] + (1-self.alpha_x)*self.serial_data[0]
-        self.y_pos = self.alpha_y*self.rs_data[1] + (1-self.alpha_y)*self.serial_data[1]
-        self.deg = self.alpha_deg*self.rs_data[2] + (1-self.alpha_deg)*self.serial_data[2]
+        self.x_pos = self.alpha_x*self.rs_data[0] + (1-self.alpha_x)*self.otos[0]
+        self.y_pos = self.alpha_y*self.rs_data[1] + (1-self.alpha_y)*self.otos[1]
+        self.deg = self.alpha_deg*self.rs_data[2] + (1-self.alpha_deg)*self.otos[2]
         self.msg.data = [self.x_pos,self.y_pos,self.deg]
-        print("publish calcu_node")
+        #print("publish calcu_node")
         self.publisher.publish(self.msg)
 
 def main(args = None):

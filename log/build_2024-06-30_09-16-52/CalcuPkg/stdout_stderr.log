@@ -1,0 +1,27 @@
+running egg_info
+writing ../../build/CalcuPkg/CalcuPkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/CalcuPkg/CalcuPkg.egg-info/dependency_links.txt
+writing entry points to ../../build/CalcuPkg/CalcuPkg.egg-info/entry_points.txt
+writing requirements to ../../build/CalcuPkg/CalcuPkg.egg-info/requires.txt
+writing top-level names to ../../build/CalcuPkg/CalcuPkg.egg-info/top_level.txt
+reading manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+writing manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+running build
+running build_py
+copying CalcuPkg/calcu_node.py -> /home/hotaka/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg
+copying CalcuPkg/debug_node.py -> /home/hotaka/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg
+running install
+running install_lib
+copying /home/hotaka/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg/calcu_node.py -> /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg
+copying /home/hotaka/R1_ros_ws/build/CalcuPkg/build/lib/CalcuPkg/debug_node.py -> /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg
+byte-compiling /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg/calcu_node.py to calcu_node.cpython-310.pyc
+byte-compiling /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg/debug_node.py to debug_node.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/CalcuPkg/CalcuPkg.egg-info to /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing calcu_node script to /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/CalcuPkg
+Installing debug_node script to /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/CalcuPkg
+Installing pos_node script to /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/CalcuPkg
+writing list of installed files to '/home/hotaka/R1_ros_ws/build/CalcuPkg/install.log'
