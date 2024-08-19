@@ -45,10 +45,10 @@ class SerialNode(Node):
         if self.rx_byte[0] == 0xA6: self.count = 0
         self.rx_data[self.count%len(self.rx_data)] = self.rx_byte[0]
         self.count += 1
+        print(f"{self.count2} {self.rx_data}")
         if self.rx_data[11] != sum(self.rx_data[1:11]) & 0xFF: 
             return False
-        print(self.rx_data)
-
+        
         for i in range(1,11):
             self.publish_msg.data[i-1] = self.rx_data[i]
         

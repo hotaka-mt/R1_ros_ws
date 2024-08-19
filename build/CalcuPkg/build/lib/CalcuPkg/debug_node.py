@@ -65,6 +65,8 @@ class DebugNode(Node):
         self.serial_send.data[3] = float(omega)
         self.serial_send.data[4] = 0
         self.serial_send.data[5] = 0
+        if x==0 and y==0 and omega==0:
+            self.serial_send.data[5] = 0x01
         self.serial_send.data[6] = 0
         self.serial_send.data[7] = 0
         self.serial_pub.publish(self.serial_send)
@@ -114,6 +116,8 @@ class DebugNode(Node):
         for i in range(9):
             try: self.pos_label[i]["text"] = "{:.3f}".format(self.debug_param[i])
             except:pass
+            try: self.limit_label[i]["text"] = "ON" if self.serial_rece_data[7]&(0x01<<i) else "OFF"
+            except:pass
 ################################Node################################
 
 ################################GUI################################
@@ -162,6 +166,10 @@ class DebugNode(Node):
             try: self.pos_name_label[i].destroy()
             except:pass
             try: self.pos_label[i].destroy()
+            except:pass
+            try: self.limit_name_label[i].destroy()
+            except:pass
+            try: self.limit_label[i].destroy()
             except:pass
         for i in range(8):
             try: self.motion_button[i].destroy()
@@ -275,11 +283,17 @@ class DebugNode(Node):
         self.main_destroy()
         self.pos_name_label = [0]*9
         self.pos_label = [0]*9
+        self.limit_name_label = [0]*9
+        self.limit_label = [0]*9
         for i in range(9):
             self.pos_name_label[i] = tk.Label(text=self.debug_name[i],font=("メイリオ","20"))
             self.pos_label[i] = tk.Label(text=self.debug_param[i],font=("メイリオ","20"))
+            self.limit_name_label[i] = tk.Label(text=f"リミット{i+1}",font=("メイリオ","20"))
+            self.limit_label[i] = tk.Label(text="OFF",font=("メイリオ","20"))
             self.pos_name_label[i].place(x=20,y=80+i*50)
             self.pos_label[i].place(x=200,y=80+i*50)
+            self.limit_name_label[i].place(x=330,y=80+i*50)
+            self.limit_label[i].place(x=470,y=80+i*50)
         self.motion_button = [0]*8
         self.motion_button[0] = tk.Button(text="動作1",font=("メイリオ","20"),command=self.motion_set1)
         self.motion_button[1] = tk.Button(text="動作2",font=("メイリオ","20"),command=self.motion_set2)
