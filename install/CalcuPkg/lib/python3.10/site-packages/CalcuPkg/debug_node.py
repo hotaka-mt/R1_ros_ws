@@ -18,8 +18,8 @@ class DebugNode(Node):
         self.auto_msg = UInt8()
 
         self.rs_data = [0]*3
-        self.serial_rece_data = [0]*10
-        self.otos_data = [0]*3
+        self.serial_rece_data = [0]*22
+        self.otos_data = [0]*9
         self.im920_data = [0]*3
         self.pos_data = [0]*3
 
@@ -35,19 +35,9 @@ class DebugNode(Node):
         self.param_num = 66
         self.Param = [0]*self.param_num
         self.before_Param = [0]*self.param_num
-        self.param_name = ["M1Pゲイン","M1Iゲイン","M1Dゲイン",
-                        "M1Pゲイン","M1Iゲイン","M1Dゲイン",
-                        "M1Pゲイン","M1Iゲイン","M1Dゲイン",
-                        "M1Pゲイン","M1Iゲイン","M1Dゲイン",
-                        "タイヤ径","旋回直径","ロリコン分解能"]
         self.debug_name = ["x位置","y位置","角度",
                         "RSx位置","RSy位置","RS角度",
                         "OTOSx位置","OTOSy位置","OTOS角度",]
-        self.robot_param = []
-        with open("src/CalcuPkg/CalcuPkg/robot_param.md") as param:
-            Param = param.read().split()
-            for i in range(len(Param)):
-                self.robot_param.append(float(Param[i]))
         self.debug_param = [0,0,0,0,0,0,0,0,0]
         self.target_xvelo = 0.0
         self.target_yvelo = 0.0
@@ -94,11 +84,11 @@ class DebugNode(Node):
         self.update_robotparam()
     def get_serial(self,msg):
         #print(msg.data)
-        for i in range(10):
+        for i in range(22):
             self.serial_rece_data[i] = msg.data[i]
-        self.debug_param[6] = int(np.array(msg.data[1]<<8 | msg.data[0],dtype=np.int16)) * 0.0003
-        self.debug_param[7] = int(np.array(msg.data[3]<<8 | msg.data[2],dtype=np.int16)) * 0.0003
-        self.debug_param[8] = int(np.array(msg.data[5]<<8 | msg.data[4],dtype=np.int16)) * 0.0055
+        self.debug_param[6] = int(np.array(msg.data[2]<<8 | msg.data[1],dtype=np.int16)) * 0.0003
+        self.debug_param[7] = int(np.array(msg.data[4]<<8 | msg.data[3],dtype=np.int16)) * 0.0003
+        self.debug_param[8] = int(np.array(msg.data[6]<<8 | msg.data[5],dtype=np.int16)) * 0.0055
         #print(self.serial_rece_data)
         self.update_robotparam()
     def get_realsense(self,msg):
@@ -116,7 +106,7 @@ class DebugNode(Node):
         for i in range(9):
             try: self.pos_label[i]["text"] = "{:.3f}".format(self.debug_param[i])
             except:pass
-            try: self.limit_label[i]["text"] = "ON" if self.serial_rece_data[7]&(0x01<<i) else "OFF"
+            try: self.limit_label[i]["text"] = "ON" if self.serial_rece_data[19]&(0x01<<i) else "OFF"
             except:pass
 ################################Node################################
 
@@ -132,9 +122,6 @@ class DebugNode(Node):
         self.home_button = tk.Button(text = "ホームに戻る",font = ("MSゴシック","20"))
         self.home_button.bind('<Button-1>',self.GUI_reset)
         self.home_button.place(x=830,y=10)
-        #設定ボタン作成
-        self.setting_button = tk.Button(text="設定",font=("メイリオ","20"),command=self.set_param)
-        self.setting_button.place(x=20,y=10)
         #各ボタンの作成と設置
         self.main_menu()
         self.gui.mainloop()
@@ -152,15 +139,6 @@ class DebugNode(Node):
         try: self.Omega_scale.destroy()
         except: pass
         try: self.reset_button.destroy()
-        except: pass
-        for i in range(15):
-            try: self.param_entry[i].destroy()
-            except: pass
-            try: self.param_label[i].destroy()
-            except: pass
-            try: self.param_button[i].destroy()
-            except: pass
-        try: self.set_param_button.destroy()
         except: pass
         for i in range(9):
             try: self.pos_name_label[i].destroy()
@@ -180,32 +158,6 @@ class DebugNode(Node):
     def GUI_reset(self,event):
         self.main_destroy()
         self.main_menu()
-
-    def param_update1(self):self.param_update(0)
-    def param_update2(self):self.param_update(1)
-    def param_update3(self):self.param_update(2)
-    def param_update4(self):self.param_update(3)
-    def param_update5(self):self.param_update(4)
-
-    def param_update(self,num):
-        with open("src/CalcuPkg/CalcuPkg/robot_param.md",mode="w") as param:
-            if num!=0:
-                for i in range(0,num*3): param.write(f"{self.robot_param[i]}\n")
-            for i in range(num*3,num*3+3): 
-                if self.param_entry[i].get() != "":
-                    param.write(self.param_entry[i].get()+"\n")
-                else:
-                    param.write(f"{self.robot_param[i]}\n")
-            if num!=4:
-                for i in range(num*3+3,15): param.write(f"{self.robot_param[i]}\n")
-        
-        for i in range(3):
-            if self.param_entry[num*3+i].get() != "":
-                self.robot_param[num*3+i] = float(self.param_entry[num*3+i].get())
-                
-        self.param_publish(num+1,self.robot_param[num*3],self.robot_param[num*3+1],self.robot_param[num*3+2])
-        print(self.robot_param)
-        self.set_param()
     
     def update_velo(self,event):
         self.target_xvelo = self.RL_scale_var.get()
@@ -243,27 +195,6 @@ class DebugNode(Node):
         #自動操作
         self.auto_botton = tk.Button(text="自動操作",font=("メイリオ","20"),command=self.auto_control)
         self.auto_botton.place(x=500,y=60,width=450,height=200)
-    
-    def set_param(self):
-        self.main_destroy()
-        self.param_entry = [0]*15
-        self.param_label = [0]*15
-        self.param_button = [0]*5
-        
-        for i in range(15):
-            self.param_entry[i] = tk.Entry(font=("メイリオ","20"),width=5)
-            self.param_label[i] = tk.Label(text=self.param_name[i]+f"    {self.robot_param[i]}",font=("メイリオ","20"))
-            
-            self.param_entry[i].place(x=(i//9)*560+250,y=(i%9)*55+60)
-            self.param_label[i].place(x=(i//9)*500+ 10,y=(i%9)*55+60)
-
-        self.param_button[0] = tk.Button(text="更新",font=("メイリオ","20"),command=self.param_update1)
-        self.param_button[1] = tk.Button(text="更新",font=("メイリオ","20"),command=self.param_update2)
-        self.param_button[2] = tk.Button(text="更新",font=("メイリオ","20"),command=self.param_update3)
-        self.param_button[3] = tk.Button(text="更新",font=("メイリオ","20"),command=self.param_update4)
-        self.param_button[4] = tk.Button(text="更新",font=("メイリオ","20"),command=self.param_update5)
-        for i in range(5):
-            self.param_button[i].place(x=(i//3)*560+350,y=(i%3)*165+170)
 
     def manual_control(self):
         self.main_destroy()

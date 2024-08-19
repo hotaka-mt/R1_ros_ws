@@ -1,0 +1,23 @@
+[1.973s] Invoking command in '/home/hotaka/R1_ros_ws/src/CalcuPkg': PYTHONPATH=/home/hotaka/R1_ros_ws/build/CalcuPkg/prefix_override:/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/CalcuPkg build --build-base /home/hotaka/R1_ros_ws/build/CalcuPkg/build install --record /home/hotaka/R1_ros_ws/build/CalcuPkg/install.log --single-version-externally-managed install_data
+[2.465s] running egg_info
+[2.467s] writing ../../build/CalcuPkg/CalcuPkg.egg-info/PKG-INFO
+[2.467s] writing dependency_links to ../../build/CalcuPkg/CalcuPkg.egg-info/dependency_links.txt
+[2.468s] writing entry points to ../../build/CalcuPkg/CalcuPkg.egg-info/entry_points.txt
+[2.468s] writing requirements to ../../build/CalcuPkg/CalcuPkg.egg-info/requires.txt
+[2.468s] writing top-level names to ../../build/CalcuPkg/CalcuPkg.egg-info/top_level.txt
+[2.473s] reading manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+[2.475s] writing manifest file '../../build/CalcuPkg/CalcuPkg.egg-info/SOURCES.txt'
+[2.475s] running build
+[2.475s] running build_py
+[2.476s] running install
+[2.477s] running install_lib
+[2.479s] running install_data
+[2.479s] running install_egg_info
+[2.483s] removing '/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg-0.0.0-py3.10.egg-info' (and everything under it)
+[2.484s] Copying ../../build/CalcuPkg/CalcuPkg.egg-info to /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages/CalcuPkg-0.0.0-py3.10.egg-info
+[2.486s] running install_scripts
+[2.530s] Installing calcu_node script to /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/CalcuPkg
+[2.530s] Installing debug_node script to /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/CalcuPkg
+[2.530s] Installing pos_node script to /home/hotaka/R1_ros_ws/install/CalcuPkg/lib/CalcuPkg
+[2.531s] writing list of installed files to '/home/hotaka/R1_ros_ws/build/CalcuPkg/install.log'
+[2.648s] Invoked command in '/home/hotaka/R1_ros_ws/src/CalcuPkg' returned '0': PYTHONPATH=/home/hotaka/R1_ros_ws/build/CalcuPkg/prefix_override:/home/hotaka/R1_ros_ws/install/CalcuPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/CalcuPkg build --build-base /home/hotaka/R1_ros_ws/build/CalcuPkg/build install --record /home/hotaka/R1_ros_ws/build/CalcuPkg/install.log --single-version-externally-managed install_data

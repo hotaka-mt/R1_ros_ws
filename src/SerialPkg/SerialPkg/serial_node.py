@@ -15,14 +15,14 @@ class SerialNode(Node):
 
         self.rx_byte = 0
         self.count = 0
-        self.rx_data = [0]*12   #ROS<-STM
+        self.rx_data = [0]*24   #ROS<-STM
         
         self.x_pos = 0
         self.y_pos = 0
         self.degree = 0
         self.condtion = 0
         self.publish_msg = UInt8MultiArray()
-        for i in range(10):
+        for i in range(22):
             self.publish_msg.data.append(0)
 
         self.publisher = self.create_publisher(UInt8MultiArray,"reception_topic",10)
@@ -45,11 +45,12 @@ class SerialNode(Node):
         if self.rx_byte[0] == 0xA6: self.count = 0
         self.rx_data[self.count%len(self.rx_data)] = self.rx_byte[0]
         self.count += 1
-        print(f"{self.count2} {self.rx_data}")
-        if self.rx_data[11] != sum(self.rx_data[1:11]) & 0xFF: 
+        if self.rx_data[23] != sum(self.rx_data[1:23]) & 0xFF: 
+            #pass
             return False
         
-        for i in range(1,11):
+        print(f"{self.count2} {self.rx_data}")
+        for i in range(1,23):
             self.publish_msg.data[i-1] = self.rx_data[i]
         
         self.publisher.publish(self.publish_msg)
