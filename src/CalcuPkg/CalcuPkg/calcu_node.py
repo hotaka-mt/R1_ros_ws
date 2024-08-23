@@ -20,13 +20,13 @@ class CalcuNode(Node):
         self.minite_error = 0.005
         self.deg_error = 0.5
 
-        self.Vmax = 1.0
-        self.A = 0.5
+        self.Vmax = 1.5
+        self.A = 2.0
         self.T = [0,0,0]
         self.L = [0,0,0]
 
         self.Omega_max = 90
-        self.angle_velo = 45
+        self.angle_velo = 90
         self.T2 = [0,0,0]
         self.Theta = [0,0,0]
 
@@ -70,15 +70,20 @@ class CalcuNode(Node):
         self.T[2] = (self.Vmax)/self.A
 
         self.L[0] = 0.5*(self.Vs+self.Vmax)*self.T[0]
-        self.L[2] = 0.5*(self.Vs)*self.T[2]
+        self.L[2] = 0.5*(self.Vmax)*self.T[2]
 
         self.T[1] = (self.R-self.L[0]-self.L[2])/self.Vmax
+        self.L[1] = self.Vmax*self.T[1]
 
         if self.T[1] < 0:
-            self.T[0] -= 0.5*self.T[1]
-            self.T[2] -= 0.5*self.T[1]
+            self.T[0] += (self.Vmax/(self.Vmax+self.Vs))*self.T[1]
+            self.T[2] += self.T[1]
             self.T[1] = 0
 
+            self.L[0] = 0.5*(self.Vs+self.Vmax)*self.T[0]
+            self.L[2] = 0.5*(self.Vmax)*self.T[2]
+            self.L[1] = 0
+            
 
         self.theta = self.target_deg[self.motion_mode]-self.postion[2]
         self.Omega_s = self.postion[5]
@@ -87,30 +92,40 @@ class CalcuNode(Node):
         self.T2[2] = (self.Omega_max)/self.angle_velo
 
         self.Theta[0] = 0.5*(self.Omega_s+self.Omega_max)*self.T2[0]
-        self.Theta[2] = 0.5*(self.Omega_s)*self.T2[2]
+        self.Theta[2] = 0.5*(self.Omega_max)*self.T2[2]
 
-        self.T2[1] = (self.theta-self.Theta[0]-self.Theta[2])/self.Vmax
+        self.T2[1] = (self.theta-self.Theta[0]-self.Theta[2])/self.Omega_max
 
         if self.T2[1] < 0:
-            self.T2[0] -= 0.5*self.T[1]
-            self.T2[2] -= 0.5*self.T[1]
+            self.T2[0] += (self.Omega_max/(self.Omega_max+self.Omega_s))*self.T2[1]
+            self.T2[2] += self.T2[1]
             self.T2[1] = 0
+
+            self.Theta[0] = 0.5*(self.Omega_s+self.Omega_max)*self.T2[0]
+            self.Theta[2] = 0.5*(self.Omega_max)*self.T2[2]
+            self.Theta[1] = 0
         self.count = 0
+        #print(f"{self.R} {self.Sita} {self.theta}")
+        #print(f"{self.T} {self.L} {self.T2} {self.Theta}")
 
     def publish(self):
-        if self.count < self.T[0]:
+        if self.count <= self.T[0]:
             self.V = self.Vs + self.count*self.A
-        elif self.count < self.T[0]+self.T[1]:
+        elif self.count <= self.T[0]+self.T[1]:
             self.V = self.V
-        elif self.count < self.T[0]+self.T[1]+self.T[2]:
-            self.V -= self.A*0.0001
+        elif self.count <= self.T[0]+self.T[1]+self.T[2]:
+            self.V -= self.A*0.001
+        else:
+            self.V = 0
         
         if self.count < self.T2[0]:
             self.Omega = self.Vs + self.count*self.angle_velo
         elif self.count < self.T2[0]+self.T2[1]:
             self.Omega = self.Omega
         elif self.count < self.T2[0]+self.T2[1]+self.T2[2]:
-            self.Omega -= self.angle_velo*0.0001
+            self.Omega -= self.angle_velo*0.001
+        else:
+            self.Omega = 0
 
         self.Vx = self.V*m.cos(self.Sita) * 1000.0
         self.Vy = self.V*m.sin(self.Sita) * 1000.0
@@ -124,7 +139,7 @@ class CalcuNode(Node):
         self.serial_send.data[6] = 0
         self.serial_send.data[7] = 0
 
-        self.count += 0.0001
+        self.count += 0.001
         print(self.serial_send.data)
         self.serial_pub.publish(self.serial_send)
 
