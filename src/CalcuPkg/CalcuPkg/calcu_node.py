@@ -17,16 +17,16 @@ class CalcuNode(Node):
         self.target_deg  = [0,0, 0,90,-90, 0, 0,170,0]
 
         self.count = 0
-        self.minite_error = 0.005
-        self.deg_error = 0.5
+        self.minite_error = 0.01
+        self.deg_error = 3
 
-        self.Vmax = 1.5
-        self.A = 2.0
+        self.Vmax = 0.5
+        self.A = 0.5
         self.T = [0,0,0]
         self.L = [0,0,0]
 
-        self.Omega_max = 90
-        self.angle_velo = 90
+        self.Omega_max = 180
+        self.angle_accele = 360
         self.T2 = [0,0,0]
         self.Theta = [0,0,0]
 
@@ -48,7 +48,7 @@ class CalcuNode(Node):
             self.serial_send.data.append(0)
         self.serial_pub = self.create_publisher(Float32MultiArray,"send_topic",10)
 
-        self.route = self.create_timer(0.01,self.make_route)
+        self.route = self.create_timer(0.1,self.make_route)
         self.timer = self.create_timer(0.001,self.publish)
         
     def get_postion(self,msg):
@@ -88,13 +88,14 @@ class CalcuNode(Node):
         self.theta = self.target_deg[self.motion_mode]-self.postion[2]
         self.Omega_s = self.postion[5]
         
-        self.T2[0] = (self.Omega_max-self.Omega_s)/self.angle_velo
-        self.T2[2] = (self.Omega_max)/self.angle_velo
+        self.T2[0] = (self.Omega_max-self.Omega_s)/self.angle_accele
+        self.T2[2] = (self.Omega_max)/self.angle_accele
 
         self.Theta[0] = 0.5*(self.Omega_s+self.Omega_max)*self.T2[0]
         self.Theta[2] = 0.5*(self.Omega_max)*self.T2[2]
 
         self.T2[1] = (self.theta-self.Theta[0]-self.Theta[2])/self.Omega_max
+        self.Theta[1] = self.Omega_max*self.T2[1]
 
         if self.T2[1] < 0:
             self.T2[0] += (self.Omega_max/(self.Omega_max+self.Omega_s))*self.T2[1]
@@ -106,24 +107,39 @@ class CalcuNode(Node):
             self.Theta[1] = 0
         self.count = 0
         #print(f"{self.R} {self.Sita} {self.theta}")
-        #print(f"{self.T} {self.L} {self.T2} {self.Theta}")
+        #print(f"{self.theta} {self.T2} {self.Theta}")
 
     def publish(self):
-        if self.count <= self.T[0]:
-            self.V = self.Vs + self.count*self.A
-        elif self.count <= self.T[0]+self.T[1]:
-            self.V = self.V
-        elif self.count <= self.T[0]+self.T[1]+self.T[2]:
-            self.V -= self.A*0.001
+        if(self.R > self.minite_error):
+            if self.count <= self.T[0]:
+                self.V = self.Vs + self.count*self.A
+            elif self.count <= self.T[0]+self.T[1]:
+                self.V = self.V
+            elif self.count <= self.T[0]+self.T[1]+self.T[2]:
+                self.V -= self.A*0.001
+            else:
+                self.V = 0
         else:
             self.V = 0
         
-        if self.count < self.T2[0]:
-            self.Omega = self.Vs + self.count*self.angle_velo
-        elif self.count < self.T2[0]+self.T2[1]:
-            self.Omega = self.Omega
-        elif self.count < self.T2[0]+self.T2[1]+self.T2[2]:
-            self.Omega -= self.angle_velo*0.001
+        if(self.theta > self.deg_error):
+            if self.count < self.T2[0]:
+                self.Omega = self.Omega_s + self.count*self.angle_accele
+            elif self.count < self.T2[0]+self.T2[1]:
+                self.Omega = self.Omega
+            elif self.count < self.T2[0]+self.T2[1]+self.T2[2]:
+                self.Omega -= self.angle_accele*0.001
+            else:
+                self.Omega = 0
+        elif(self.theta < -1*self.deg_error):
+            if self.count < abs(self.T2[0]):
+                self.Omega = self.Omega_s - self.count*self.angle_accele
+            elif self.count < abs(self.T2[0]+self.T2[1]):
+                self.Omega = self.Omega
+            elif self.count < abs(self.T2[0]+self.T2[1]+self.T2[2]):
+                self.Omega += self.angle_accele*0.001
+            else:
+                self.Omega = 0
         else:
             self.Omega = 0
 

@@ -1,0 +1,21 @@
+[2.540s] Invoking command in '/home/hotaka/R1_ros_ws/src/RSPkg': PYTHONPATH=/home/hotaka/R1_ros_ws/build/RSPkg/prefix_override:/home/hotaka/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/RSPkg build --build-base /home/hotaka/R1_ros_ws/build/RSPkg/build install --record /home/hotaka/R1_ros_ws/build/RSPkg/install.log --single-version-externally-managed install_data
+[3.114s] running egg_info
+[3.116s] writing ../../build/RSPkg/RSPkg.egg-info/PKG-INFO
+[3.116s] writing dependency_links to ../../build/RSPkg/RSPkg.egg-info/dependency_links.txt
+[3.117s] writing entry points to ../../build/RSPkg/RSPkg.egg-info/entry_points.txt
+[3.118s] writing requirements to ../../build/RSPkg/RSPkg.egg-info/requires.txt
+[3.118s] writing top-level names to ../../build/RSPkg/RSPkg.egg-info/top_level.txt
+[3.121s] reading manifest file '../../build/RSPkg/RSPkg.egg-info/SOURCES.txt'
+[3.123s] writing manifest file '../../build/RSPkg/RSPkg.egg-info/SOURCES.txt'
+[3.123s] running build
+[3.123s] running build_py
+[3.124s] running install
+[3.125s] running install_lib
+[3.128s] running install_data
+[3.128s] running install_egg_info
+[3.134s] removing '/home/hotaka/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg-0.0.0-py3.10.egg-info' (and everything under it)
+[3.136s] Copying ../../build/RSPkg/RSPkg.egg-info to /home/hotaka/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages/RSPkg-0.0.0-py3.10.egg-info
+[3.138s] running install_scripts
+[3.213s] Installing RS_node script to /home/hotaka/R1_ros_ws/install/RSPkg/lib/RSPkg
+[3.214s] writing list of installed files to '/home/hotaka/R1_ros_ws/build/RSPkg/install.log'
+[3.267s] Invoked command in '/home/hotaka/R1_ros_ws/src/RSPkg' returned '0': PYTHONPATH=/home/hotaka/R1_ros_ws/build/RSPkg/prefix_override:/home/hotaka/R1_ros_ws/install/RSPkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/RSPkg build --build-base /home/hotaka/R1_ros_ws/build/RSPkg/build install --record /home/hotaka/R1_ros_ws/build/RSPkg/install.log --single-version-externally-managed install_data

@@ -36,9 +36,9 @@ class DebugNode(Node):
         self.Param = [0]*self.param_num
         self.before_Param = [0]*self.param_num
         self.debug_name = ["x位置","y位置","角度",
-                        "RSx位置","RSy位置","RS角度",
-                        "OTOSx位置","OTOSy位置","OTOS角度",]
-        self.debug_param = [0,0,0,0,0,0,0,0,0]
+                        "OTOSx位置","OTOSy位置","OTOS角度",
+                        "OTOSx速度","OTOSy速度","OTOS角速度",]
+        self.debug_param = [0]*9
         self.target_xvelo = 0.0
         self.target_yvelo = 0.0
         self.target_omega = 0.0
@@ -86,15 +86,19 @@ class DebugNode(Node):
         #print(msg.data)
         for i in range(22):
             self.serial_rece_data[i] = msg.data[i]
-        self.debug_param[6] = int(np.array(msg.data[2]<<8 | msg.data[1],dtype=np.int16)) * 0.0003
-        self.debug_param[7] = int(np.array(msg.data[4]<<8 | msg.data[3],dtype=np.int16)) * 0.0003
-        self.debug_param[8] = int(np.array(msg.data[6]<<8 | msg.data[5],dtype=np.int16)) * 0.0055
+        self.debug_param[3] = int(np.array(msg.data[2]<<8 | msg.data[1],dtype=np.int16)) * 0.0003
+        self.debug_param[4] = int(np.array(msg.data[4]<<8 | msg.data[3],dtype=np.int16)) * 0.0003
+        self.debug_param[5] = int(np.array(msg.data[6]<<8 | msg.data[5],dtype=np.int16)) * 0.0055
+        self.debug_param[6] = int(np.array(msg.data[8]<<8 | msg.data[7],dtype=np.int16)) * 0.0015
+        self.debug_param[7] = int(np.array(msg.data[10]<<8 | msg.data[9],dtype=np.int16)) * 0.0015
+        self.debug_param[8] = int(np.array(msg.data[12]<<8 | msg.data[11],dtype=np.int16)) * 0.061
         #print(self.serial_rece_data)
         self.update_robotparam()
     def get_realsense(self,msg):
         #print(msg.data)
         for i in range(3):
-            self.debug_param[i+3] = msg.data[i]
+            pass
+            #self.debug_param[i+3] = msg.data[i]
         self.update_robotparam()
     def get_IM920(self,msg):
         #print(msg.data)
