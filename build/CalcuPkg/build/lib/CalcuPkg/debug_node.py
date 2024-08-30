@@ -37,40 +37,35 @@ class DebugNode(Node):
         self.before_Param = [0]*self.param_num
         self.debug_name = ["x位置","y位置","角度",
                         "OTOSx位置","OTOSy位置","OTOS角度",
-                        "OTOSx速度","OTOSy速度","OTOS角速度",]
-        self.debug_param = [0]*9
+                        "RSx位置","RSy位置","RS位置",
+                        "x速度","y速度","角速度",
+                        "OTOSx速度","OTOSy速度","OTOS角速度",
+                        "RSx速度","RSy速度","RS角速度",]
+        self.debug_param = [0]*18
         self.target_xvelo = 0.0
         self.target_yvelo = 0.0
         self.target_omega = 0.0
+        self.machan_data = 0
+        self.reload1_bit = 0
+        self.reload2_bit = 0
+        self.Enkaku_bit = 0
+        self.crapult_bit = 0
         
         self.gui_thread = threading.Thread(target=self.gui_init)
         self.gui_thread.start()
 
 ################################Node################################
-    def mecanum_publish(self,x,y,omega):
+    def robot_publish(self):
         #print(f"{x} {y} {omega}")
         self.serial_send.data[0] = 0
-        self.serial_send.data[1] = float(x)
-        self.serial_send.data[2] = float(y)
-        self.serial_send.data[3] = float(omega)
+        self.serial_send.data[1] = float(self.target_xvelo)
+        self.serial_send.data[2] = float(self.target_yvelo)
+        self.serial_send.data[3] = float(self.target_omega)
         self.serial_send.data[4] = 0
-        self.serial_send.data[5] = 0
-        if x==0 and y==0 and omega==0:
-            self.serial_send.data[5] = 0x01
+        self.serial_send.data[5] = float(self.machan_data)
         self.serial_send.data[6] = 0
         self.serial_send.data[7] = 0
-        self.serial_pub.publish(self.serial_send)
-
-    def param_publish(self,num,P,I,D):
-        self.serial_send.data[0] = float(num)
-        self.serial_send.data[1] = float(P)
-        self.serial_send.data[2] = float(I)
-        self.serial_send.data[3] = float(D)
-        self.serial_send.data[4] = 0
-        self.serial_send.data[5] = 0
-        self.serial_send.data[6] = 0
-        self.serial_send.data[7] = 0
-        #print(self.serial_send.data)
+        print(self.serial_send.data)
         self.serial_pub.publish(self.serial_send)
 
     def auto_publish(self,num):
@@ -81,6 +76,8 @@ class DebugNode(Node):
         #print(msg.data)
         for i in range(3):
             self.debug_param[i] = msg.data[i]
+        for i in range(3):
+            self.debug_param[i+9] = msg.data[i+3]
         self.update_robotparam()
     def get_serial(self,msg):
         #print(msg.data)
@@ -89,16 +86,15 @@ class DebugNode(Node):
         self.debug_param[3] = int(np.array(msg.data[2]<<8 | msg.data[1],dtype=np.int16)) * 0.0003
         self.debug_param[4] = int(np.array(msg.data[4]<<8 | msg.data[3],dtype=np.int16)) * 0.0003
         self.debug_param[5] = int(np.array(msg.data[6]<<8 | msg.data[5],dtype=np.int16)) * 0.0055
-        self.debug_param[6] = int(np.array(msg.data[8]<<8 | msg.data[7],dtype=np.int16)) * 0.0015
-        self.debug_param[7] = int(np.array(msg.data[10]<<8 | msg.data[9],dtype=np.int16)) * 0.0015
-        self.debug_param[8] = int(np.array(msg.data[12]<<8 | msg.data[11],dtype=np.int16)) * 0.061
+        self.debug_param[12] = int(np.array(msg.data[8]<<8 | msg.data[7],dtype=np.int16)) * 0.0015
+        self.debug_param[13] = int(np.array(msg.data[10]<<8 | msg.data[9],dtype=np.int16)) * 0.0015
+        self.debug_param[14] = int(np.array(msg.data[12]<<8 | msg.data[11],dtype=np.int16)) * 0.061
         #print(self.serial_rece_data)
         self.update_robotparam()
     def get_realsense(self,msg):
         #print(msg.data)
         for i in range(3):
-            pass
-            #self.debug_param[i+3] = msg.data[i]
+            self.debug_param[i+6] = msg.data[i]
         self.update_robotparam()
     def get_IM920(self,msg):
         #print(msg.data)
@@ -107,7 +103,7 @@ class DebugNode(Node):
         self.update_robotparam()
     
     def update_robotparam(self):
-        for i in range(9):
+        for i in range(18):
             try: self.pos_label[i]["text"] = "{:.3f}".format(self.debug_param[i])
             except:pass
             try: self.limit_label[i]["text"] = "ON" if self.serial_rece_data[19]&(0x01<<i) else "OFF"
@@ -144,7 +140,7 @@ class DebugNode(Node):
         except: pass
         try: self.reset_button.destroy()
         except: pass
-        for i in range(9):
+        for i in range(18):
             try: self.pos_name_label[i].destroy()
             except:pass
             try: self.pos_label[i].destroy()
@@ -158,6 +154,14 @@ class DebugNode(Node):
             except: pass
         try: self.motion_reset.destroy()
         except: pass
+        try: self.Enkaku_button.destroy()
+        except: pass
+        try: self.crapult_button.destroy()
+        except: pass
+        try: self.reload1_button.destroy()
+        except: pass
+        try: self.reload2_button.destroy()
+        except: pass
 
     def GUI_reset(self,event):
         self.main_destroy()
@@ -167,8 +171,8 @@ class DebugNode(Node):
         self.target_xvelo = self.RL_scale_var.get()
         self.target_yvelo = self.FB_scale_var.get()
         self.target_omega = self.Omega_scale_var.get()
-        print(f"{self.target_xvelo}    {self.target_yvelo}    {self.target_omega}")
-        self.mecanum_publish(self.target_xvelo,self.target_yvelo,self.target_omega)
+        #print(f"{self.target_xvelo}    {self.target_yvelo}    {self.target_omega}")
+        self.robot_publish()
 
     def reset_velo(self):
         self.target_xvelo = 0
@@ -177,8 +181,26 @@ class DebugNode(Node):
         self.FB_scale_var.set(0)
         self.RL_scale_var.set(0)
         self.Omega_scale_var.set(0)
-        print(f"{self.target_xvelo}    {self.target_yvelo}    {self.target_omega}")
-        self.mecanum_publish(self.target_xvelo,self.target_yvelo,self.target_omega)
+        #print(f"{self.target_xvelo}    {self.target_yvelo}    {self.target_omega}")
+        self.robot_publish()
+
+    def update_machan(self,num):
+        if num==1:
+            self.reload1_bit = 1
+            self.reload2_bit = 0
+        if num==2:
+            self.reload1_bit = 0
+            self.reload2_bit = 1
+        if num == 3: self.Enkaku_bit = not(self.Enkaku_bit)
+        if num == 4: self.crapult_bit = not(self.crapult_bit)
+
+        self.machan_data = (self.crapult_bit<<3) | (self.Enkaku_bit<<2) | (self.reload2_bit<<1) | (self.reload1_bit<<0)
+        self.robot_publish()
+
+    def reload1_machan(self): self.update_machan(1)
+    def reload2_machan(self): self.update_machan(2)
+    def Enkaku_machan(self): self.update_machan(3)
+    def crapult_machan(self): self.update_machan(4)
 
     def motion_set0(self):self.auto_publish(0)
     def motion_set1(self):self.auto_publish(1)
@@ -206,6 +228,17 @@ class DebugNode(Node):
         self.FB_scale_var = tk.IntVar()
         self.RL_scale_var = tk.IntVar()
         self.Omega_scale_var = tk.IntVar()
+
+        self.Enkaku_button = tk.Button(text="遠隔探索機発射",font=("メイリオ","20"),command=self.Enkaku_machan)
+        self.crapult_button = tk.Button(text="鶴パルト発射",font=("メイリオ","20"),command=self.crapult_machan)
+        self.reload1_button = tk.Button(text="お迎え",font=("メイリオ","20"),command=self.reload1_machan)
+        self.reload2_button = tk.Button(text="リロード",font=("メイリオ","20"),command=self.reload2_machan)
+
+        self.Enkaku_button.place(x=200,y=100)
+        self.crapult_button.place(x=500,y=100)
+        self.reload1_button.place(x=200,y=150)
+        self.reload2_button.place(x=500,y=150)
+
         self.FB_scale    = tk.Scale(variable=self.FB_scale_var   ,orient=tk.VERTICAL  ,length=500,width=50,sliderlength=40,from_=  1500,to= -1500,tickinterval=500,command=self.update_velo)
         self.RL_scale    = tk.Scale(variable=self.RL_scale_var   ,orient=tk.HORIZONTAL,length=500,width=50,sliderlength=40,from_= -1500,to=  1500,tickinterval=500,command=self.update_velo)
         self.Omega_scale = tk.Scale(variable=self.Omega_scale_var,orient=tk.HORIZONTAL,length=300,width=50,sliderlength=40,from_= -180 ,to=  180, tickinterval=45 ,command=self.update_velo)
@@ -216,19 +249,20 @@ class DebugNode(Node):
 
     def auto_control(self):
         self.main_destroy()
-        self.pos_name_label = [0]*9
-        self.pos_label = [0]*9
+        self.pos_name_label = [0]*18
+        self.pos_label = [0]*18
         self.limit_name_label = [0]*9
         self.limit_label = [0]*9
-        for i in range(9):
+        for i in range(18):
             self.pos_name_label[i] = tk.Label(text=self.debug_name[i],font=("メイリオ","20"))
             self.pos_label[i] = tk.Label(text=self.debug_param[i],font=("メイリオ","20"))
+            self.pos_name_label[i].place(x= 20 if i<9 else 330,y=80+(i%9)*50)
+            self.pos_label[i].place(x= 200 if i<9 else 500,y=80+(i%9)*50)
+        for i in range(8):
             self.limit_name_label[i] = tk.Label(text=f"リミット{i+1}",font=("メイリオ","20"))
             self.limit_label[i] = tk.Label(text="OFF",font=("メイリオ","20"))
-            self.pos_name_label[i].place(x=20,y=80+i*50)
-            self.pos_label[i].place(x=200,y=80+i*50)
-            self.limit_name_label[i].place(x=330,y=80+i*50)
-            self.limit_label[i].place(x=470,y=80+i*50)
+            self.limit_name_label[i].place(x=640,y=80+i*50)
+            self.limit_label[i].place(x=780,y=80+i*50)
         self.motion_button = [0]*8
         self.motion_button[0] = tk.Button(text="動作1",font=("メイリオ","20"),command=self.motion_set1)
         self.motion_button[1] = tk.Button(text="動作2",font=("メイリオ","20"),command=self.motion_set2)

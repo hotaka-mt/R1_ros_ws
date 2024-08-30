@@ -18,8 +18,7 @@ class CalcuNode(Node):
 
         self.count = 0
         self.minite_error = 0.01
-        self.deg_error = 3
-
+        self.deg_error = 1
         self.Vmax = 0.5
         self.A = 0.5
         self.T = [0,0,0]

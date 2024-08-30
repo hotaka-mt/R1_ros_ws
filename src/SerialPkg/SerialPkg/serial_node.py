@@ -13,7 +13,7 @@ class SerialNode(Node):
         self.tx_data = [0]*20   #ROS->STM
         self.tx_select = [0xA0,0xA1,0xA2,0xA3,0xA4,0xA5]
 
-        self.rx_byte = 0
+        self.rx_byte = [0]*48
         self.count = 0
         self.rx_data = [0]*24   #ROS<-STM
         
@@ -35,18 +35,33 @@ class SerialNode(Node):
     def tx_interrupt(self):
         #ROSから送信
         self.serial.write(bytes(self.tx_data))
-        #print(self.tx_data)
+        print(self.tx_data)
         
     def rx_interrupt(self):
         #print(self.count2)
-        self.count2 += 1
+        self.count += 1
         #マイコンから受信しトピックに出力
-        self.rx_byte = self.serial.read(1)
+        self.rx_byte[0:24] = self.rx_byte[24:48]
+        self.rx_byte[24:48] = self.serial.read(24)
+
+        self.rx_data = self.rx_byte[self.rx_byte.index(0xA6):self.rx_byte.index(0xA6)+24]
+        #print(f"{self.rx_byte.index(0xA6)} {len(self.rx_data)}")
+
+        if self.count >= 2:
+            if self.rx_data[23] != sum(self.rx_data[1:23]) & 0xFF: 
+                return False
+            
+            #print(f"{self.count} {self.rx_data}")
+            for i in range(1,23):
+                self.publish_msg.data[i-1] = self.rx_data[i]
+            
+            self.publisher.publish(self.publish_msg)
+        return True
+
         if self.rx_byte[0] == 0xA6: self.count = 0
         self.rx_data[self.count%len(self.rx_data)] = self.rx_byte[0]
         self.count += 1
         if self.rx_data[23] != sum(self.rx_data[1:23]) & 0xFF: 
-            #pass
             return False
         
         print(f"{self.count2} {self.rx_data}")

@@ -11,16 +11,17 @@ class PosNode(Node):
 
         self.rs_data = [0.0]*3
 
-        ### センサへの依存度を調整する。値が大きいほどRealSensenに、小さいほどトラッキングセンサに依存する
         self.alpha_x = 0
         self.alpha_y = 0
         self.alpha_deg = 1
-        ###
 
         self.past_otosx = 0
         self.past_otosy = 0
         self.dx = 0
         self.dy = 0
+
+        self.otosVx = 0
+        self.otosVy = 0
 
         self.x_pos = 0
         self.y_pos = 0
@@ -68,16 +69,19 @@ class PosNode(Node):
         self.dx =  (self.otos[0]-self.past_otosx)*m.cos(self.otos[2]*(2*m.pi/360.0)) + (self.otos[1]-self.past_otosy)*m.sin(self.otos[2]*(2*m.pi/360.0))
         self.dy = -(self.otos[0]-self.past_otosx)*m.sin(self.otos[2]*(2*m.pi/360.0)) + (self.otos[1]-self.past_otosy)*m.cos(self.otos[2]*(2*m.pi/360.0))
 
-        self.x_pos = self.dx*m.cos(self.rs_data[2]*(2*m.pi/360.0)) - self.dy*m.sin(self.rs_data[2]*(2*m.pi/360.0))
-        self.y_pos = self.dx*m.sin(self.rs_data[2]*(2*m.pi/360.0)) + self.dy*m.cos(self.rs_data[2]*(2*m.pi/360.0))
+        self.otosVx =  (self.otos[3])*m.cos(self.otos[2]*(2*m.pi/360.0)) + (self.otos[4])*m.sin(self.otos[2]*(2*m.pi/360.0))
+        self.otosVy = -(self.otos[3])*m.sin(self.otos[2]*(2*m.pi/360.0)) + (self.otos[4])*m.cos(self.otos[2]*(2*m.pi/360.0))
+
+        self.x_pos += self.dx*m.cos(self.rs_data[2]*(2*m.pi/360.0)) - self.dy*m.sin(self.rs_data[2]*(2*m.pi/360.0))
+        self.y_pos += self.dx*m.sin(self.rs_data[2]*(2*m.pi/360.0)) + self.dy*m.cos(self.rs_data[2]*(2*m.pi/360.0))
         self.deg = self.rs_data[2]
-        self.x_velo = self.otos[3]
-        self.y_velo = self.otos[4]
+        self.x_velo = self.otosVx*m.cos(self.rs_data[2]*(2*m.pi/360.0)) - self.otosVy*m.sin(self.rs_data[2]*(2*m.pi/360.0))
+        self.y_velo = self.otosVx*m.sin(self.rs_data[2]*(2*m.pi/360.0)) + self.otosVy*m.cos(self.rs_data[2]*(2*m.pi/360.0))
         self.omega = self.otos[5]
         self.x_accle = self.otos[6]
         self.y_accle = self.otos[7]
         self.angle_accle = self.otos[8]
-        print([self.x_pos,self.y_pos,self.deg,self.x_velo,self.y_velo,self.omega,self.x_accle,self.y_accle,self.angle_accle])
+        #print([self.x_pos,self.y_pos,self.deg,self.x_velo,self.y_velo,self.omega,self.x_accle,self.y_accle,self.angle_accle])
         self.msg.data = [self.x_pos,self.y_pos,self.deg,self.x_velo,self.y_velo,self.omega,self.x_accle,self.y_accle,self.angle_accle]
         #print(self.msg.data)
         self.publisher.publish(self.msg)
