@@ -114,14 +114,14 @@ class DebugNode(Node):
     def gui_init(self):
         self.gui = tk.Tk()
         self.gui.title("DebugWindow")
-        self.gui.geometry("1024x600")
+        self.gui.geometry("1600x1000")
 
         self.param_num = 66
 
         #リセットボタンを作成
         self.home_button = tk.Button(text = "ホームに戻る",font = ("MSゴシック","20"))
         self.home_button.bind('<Button-1>',self.GUI_reset)
-        self.home_button.place(x=830,y=10)
+        self.home_button.place(x=1225,y=10)
         #各ボタンの作成と設置
         self.main_menu()
         self.gui.mainloop()
@@ -217,10 +217,10 @@ class DebugNode(Node):
         self.main_destroy()
         #手動操作
         self.manual_botton = tk.Button(text="手動操作",font=("メイリオ","20"),command=self.manual_control)
-        self.manual_botton.place(x=20,y=60,width=450,height=200)
+        self.manual_botton.place(x=20,y=100,width=760,height=300)
         #自動操作
         self.auto_botton = tk.Button(text="自動操作",font=("メイリオ","20"),command=self.auto_control)
-        self.auto_botton.place(x=500,y=60,width=450,height=200)
+        self.auto_botton.place(x=820,y=100,width=760,height=300)
 
     def manual_control(self):
         self.main_destroy()
@@ -234,18 +234,18 @@ class DebugNode(Node):
         self.reload1_button = tk.Button(text="お迎え",font=("メイリオ","20"),command=self.reload1_machan)
         self.reload2_button = tk.Button(text="リロード",font=("メイリオ","20"),command=self.reload2_machan)
 
-        self.Enkaku_button.place(x=200,y=100)
-        self.crapult_button.place(x=500,y=100)
-        self.reload1_button.place(x=200,y=150)
-        self.reload2_button.place(x=500,y=150)
+        self.Enkaku_button.place(x=500,y=150)
+        self.crapult_button.place(x=1000,y=150)
+        self.reload1_button.place(x=500,y=250)
+        self.reload2_button.place(x=1000,y=250)
 
-        self.FB_scale    = tk.Scale(variable=self.FB_scale_var   ,orient=tk.VERTICAL  ,length=500,width=50,sliderlength=40,from_=  1500,to= -1500,tickinterval=500,command=self.update_velo)
-        self.RL_scale    = tk.Scale(variable=self.RL_scale_var   ,orient=tk.HORIZONTAL,length=500,width=50,sliderlength=40,from_= -1500,to=  1500,tickinterval=500,command=self.update_velo)
-        self.Omega_scale = tk.Scale(variable=self.Omega_scale_var,orient=tk.HORIZONTAL,length=300,width=50,sliderlength=40,from_= -180 ,to=  180, tickinterval=45 ,command=self.update_velo)
-        self.reset_button.place(x=800,y=500)
+        self.FB_scale    = tk.Scale(variable=self.FB_scale_var   ,orient=tk.VERTICAL  ,length=900,width=100,sliderlength=40,from_=  1500,to= -1500,tickinterval=500,command=self.update_velo)
+        self.RL_scale    = tk.Scale(variable=self.RL_scale_var   ,orient=tk.HORIZONTAL,length=900,width=100,sliderlength=40,from_= -1500,to=  1500,tickinterval=500,command=self.update_velo)
+        self.Omega_scale = tk.Scale(variable=self.Omega_scale_var,orient=tk.HORIZONTAL,length=600,width=100,sliderlength=40,from_= -180 ,to=  180, tickinterval=45 ,command=self.update_velo)
+        self.reset_button.place(x=1200,y=850)
         self.FB_scale.place(x=50,y=60)
-        self.RL_scale.place(x=300,y=270)
-        self.Omega_scale.place(x=400,y=400)
+        self.RL_scale.place(x=500,y=400)
+        self.Omega_scale.place(x=650,y=600)
 
     def auto_control(self):
         self.main_destroy()
@@ -256,13 +256,13 @@ class DebugNode(Node):
         for i in range(18):
             self.pos_name_label[i] = tk.Label(text=self.debug_name[i],font=("メイリオ","20"))
             self.pos_label[i] = tk.Label(text=self.debug_param[i],font=("メイリオ","20"))
-            self.pos_name_label[i].place(x= 20 if i<9 else 330,y=80+(i%9)*50)
-            self.pos_label[i].place(x= 200 if i<9 else 500,y=80+(i%9)*50)
+            self.pos_name_label[i].place(x= 20 if i<9 else 500,y=160+(i%9)*80)
+            self.pos_label[i].place(x= 325 if i<9 else 820,y=160+(i%9)*80)
         for i in range(8):
             self.limit_name_label[i] = tk.Label(text=f"リミット{i+1}",font=("メイリオ","20"))
             self.limit_label[i] = tk.Label(text="OFF",font=("メイリオ","20"))
-            self.limit_name_label[i].place(x=640,y=80+i*50)
-            self.limit_label[i].place(x=780,y=80+i*50)
+            self.limit_name_label[i].place(x=950,y=160+i*80)
+            self.limit_label[i].place(x=1225,y=160+i*80)
         self.motion_button = [0]*8
         self.motion_button[0] = tk.Button(text="動作1",font=("メイリオ","20"),command=self.motion_set1)
         self.motion_button[1] = tk.Button(text="動作2",font=("メイリオ","20"),command=self.motion_set2)
@@ -274,8 +274,8 @@ class DebugNode(Node):
         self.motion_button[7] = tk.Button(text="動作8",font=("メイリオ","20"),command=self.motion_set8)
         self.motion_reset = tk.Button(text="初期位置",font=("メイリオ","20"),command=self.motion_set0)
         for i in range(8):
-            self.motion_button[i].place(x=850,y=80+i*50)
-        self.motion_reset.place(x=850,y=480)
+            self.motion_button[i].place(x=1350,y=160+i*80)
+        self.motion_reset.place(x=1350,y=800)
 ################################GUI################################
 
 def main(args = None):
