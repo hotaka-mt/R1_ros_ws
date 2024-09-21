@@ -50,6 +50,9 @@ class DebugNode(Node):
         self.reload2_bit = 0
         self.Enkaku_bit = 0
         self.crapult_bit = 0
+
+        self.field = 0
+        self.field_color = ["LightPink","SkyBlue"]
         
         self.gui_thread = threading.Thread(target=self.gui_init)
         self.gui_thread.start()
@@ -69,7 +72,8 @@ class DebugNode(Node):
         self.serial_pub.publish(self.serial_send)
 
     def auto_publish(self,num):
-        self.auto_msg.data = num
+        self.auto_msg.data = num | (self.field<<3)
+        print(hex(self.auto_msg.data))
         self.auto_pub.publish(self.auto_msg)
 
     def get_position(self,msg):
@@ -115,6 +119,7 @@ class DebugNode(Node):
         self.gui = tk.Tk()
         self.gui.title("DebugWindow")
         self.gui.geometry("1600x1000")
+        self.gui["bg"] = self.field_color[self.field]
 
         self.param_num = 66
 
@@ -122,6 +127,9 @@ class DebugNode(Node):
         self.home_button = tk.Button(text = "ホームに戻る",font = ("MSゴシック","20"))
         self.home_button.bind('<Button-1>',self.GUI_reset)
         self.home_button.place(x=1225,y=10)
+        self.field_button = tk.Button(text='フィールド変更',font = ("MSゴシック","20"))
+        self.field_button.bind('<Button-1>',self.field_change)
+        self.field_button.place(x=800,y=10)
         #各ボタンの作成と設置
         self.main_menu()
         self.gui.mainloop()
@@ -166,6 +174,10 @@ class DebugNode(Node):
     def GUI_reset(self,event):
         self.main_destroy()
         self.main_menu()
+
+    def field_change(self,event):
+        self.field = (self.field+1)%2
+        self.gui["bg"] = self.field_color[self.field]
     
     def update_velo(self,event):
         self.target_xvelo = self.RL_scale_var.get()
@@ -202,11 +214,11 @@ class DebugNode(Node):
     def Enkaku_machan(self): self.update_machan(3)
     def crapult_machan(self): self.update_machan(4)
 
-    def motion_set0(self):self.auto_publish(0)
-    def motion_set1(self):self.auto_publish(1)
-    def motion_set2(self):self.auto_publish(2)
-    def motion_set3(self):self.auto_publish(3)
-    def motion_set4(self):self.auto_publish(4)
+    def motion_set0(self):self.auto_publish(0x00)
+    def motion_set1(self):self.auto_publish(0x11)
+    def motion_set2(self):self.auto_publish(0x12)
+    def motion_set3(self):self.auto_publish(0x23)
+    def motion_set4(self):self.auto_publish(0x04)
     def motion_set5(self):self.auto_publish(5)
     def motion_set6(self):self.auto_publish(6)
     def motion_set7(self):self.auto_publish(7)
@@ -254,25 +266,25 @@ class DebugNode(Node):
         self.limit_name_label = [0]*9
         self.limit_label = [0]*9
         for i in range(18):
-            self.pos_name_label[i] = tk.Label(text=self.debug_name[i],font=("メイリオ","20"))
-            self.pos_label[i] = tk.Label(text=self.debug_param[i],font=("メイリオ","20"))
+            self.pos_name_label[i] = tk.Label(text=self.debug_name[i],font=("メイリオ","17"))
+            self.pos_label[i] = tk.Label(text=self.debug_param[i],font=("メイリオ","17"))
             self.pos_name_label[i].place(x= 20 if i<9 else 500,y=160+(i%9)*80)
-            self.pos_label[i].place(x= 325 if i<9 else 820,y=160+(i%9)*80)
+            self.pos_label[i].place(x= 300 if i<9 else 780,y=160+(i%9)*80)
         for i in range(8):
-            self.limit_name_label[i] = tk.Label(text=f"リミット{i+1}",font=("メイリオ","20"))
-            self.limit_label[i] = tk.Label(text="OFF",font=("メイリオ","20"))
-            self.limit_name_label[i].place(x=950,y=160+i*80)
+            self.limit_name_label[i] = tk.Label(text=f"リミット{i+1}",font=("メイリオ","17"))
+            self.limit_label[i] = tk.Label(text="OFF",font=("メイリオ","17"))
+            self.limit_name_label[i].place(x=970,y=160+i*80)
             self.limit_label[i].place(x=1225,y=160+i*80)
         self.motion_button = [0]*8
-        self.motion_button[0] = tk.Button(text="動作1",font=("メイリオ","20"),command=self.motion_set1)
-        self.motion_button[1] = tk.Button(text="動作2",font=("メイリオ","20"),command=self.motion_set2)
-        self.motion_button[2] = tk.Button(text="動作3",font=("メイリオ","20"),command=self.motion_set3)
-        self.motion_button[3] = tk.Button(text="動作4",font=("メイリオ","20"),command=self.motion_set4)
-        self.motion_button[4] = tk.Button(text="動作5",font=("メイリオ","20"),command=self.motion_set5)
-        self.motion_button[5] = tk.Button(text="動作6",font=("メイリオ","20"),command=self.motion_set6)
-        self.motion_button[6] = tk.Button(text="動作7",font=("メイリオ","20"),command=self.motion_set7)
-        self.motion_button[7] = tk.Button(text="動作8",font=("メイリオ","20"),command=self.motion_set8)
-        self.motion_reset = tk.Button(text="初期位置",font=("メイリオ","20"),command=self.motion_set0)
+        self.motion_button[0] = tk.Button(text="E100",font=("メイリオ","17"),command=self.motion_set1)
+        self.motion_button[1] = tk.Button(text="E000",font=("メイリオ","17"),command=self.motion_set2)
+        self.motion_button[2] = tk.Button(text="K000",font=("メイリオ","17"),command=self.motion_set3)
+        self.motion_button[3] = tk.Button(text="Stay",font=("メイリオ","17"),command=self.motion_set4)
+        self.motion_button[4] = tk.Button(text="動作5",font=("メイリオ","17"),command=self.motion_set5)
+        self.motion_button[5] = tk.Button(text="動作6",font=("メイリオ","17"),command=self.motion_set6)
+        self.motion_button[6] = tk.Button(text="動作7",font=("メイリオ","17"),command=self.motion_set7)
+        self.motion_button[7] = tk.Button(text="動作8",font=("メイリオ","17"),command=self.motion_set8)
+        self.motion_reset = tk.Button(text="Start",font=("メイリオ","17"),command=self.motion_set0)
         for i in range(8):
             self.motion_button[i].place(x=1350,y=160+i*80)
         self.motion_reset.place(x=1350,y=800)

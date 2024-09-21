@@ -12,9 +12,9 @@ class CalcuNode(Node):
         self.postion = [0]*9
 
         self.motion_mode = 0
-        self.target_xpos = [0,0,-1, 0,  0,-1, 0,  0,0]
-        self.target_ypos = [0,1, 0, 0,  0, 1, 2,  0,0]
-        self.target_deg  = [0,0, 0,90,-90, 0, 0,170,0]
+        self.target_xpos = [[ 0,-2.5,-2.5,-2.5,-2.5],[ 0, 2.5, 2.5, 2.5, 2.5]]
+        self.target_ypos = [[ 0, 1.0, 1.5, 1.5, 1.0],[ 0, 1.0, 1.5, 1.5, 1.0]]
+        self.target_deg  = [[ 0,   0,   0,   0,   0],[ 0,   0,   0,   0,   0]]
 
         self.count = 0
         self.minite_error = 0.01
